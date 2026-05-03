@@ -27,7 +27,7 @@ const { loadExcludedWords } = require('../exclusions');
  */
 function batchTranslate(words) {
     try {
-        const output = execSync('trans -b :en -no-auto', {
+        const output = execSync('trans -b es:en -no-auto', {
             input: words.join('\n'),
             encoding: 'utf-8',
             timeout: 120000,
@@ -197,8 +197,7 @@ source: "${sourceMatch[1]}"
 
                 batch.forEach((word, idx) => {
                     const t = translations[idx]?.trim().toLowerCase() || '[translation needed]';
-                    // Skip if translation is same as original (translate-shell failed)
-                    if (t && t !== word && t !== '') {
+                    if (t && t !== '') {
                         vocab[word] = t;
                         translatedCount++;
                     }
