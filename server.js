@@ -431,6 +431,45 @@ const server = http.createServer((req, res) => {
         return;
     }
     
+    // Learned videos endpoints
+    const learnedPath = path.join(__dirname, 'learned.json');
+    
+    // GET learned videos
+    if (url.pathname === '/api/learned' && req.method === 'GET') {
+        try {
+            if (fs.existsSync(learnedPath)) {
+                const data = fs.readFileSync(learnedPath, 'utf-8');
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(data);
+            } else {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ learnedVideos: [], learnedPanelCollapsed: true }));
+            }
+        } catch (e) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: e.message }));
+        }
+        return;
+    }
+    
+    // POST learned videos (save)
+    if (url.pathname === '/api/learned' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => body += chunk);
+        req.on('end', () => {
+            try {
+                const data = JSON.parse(body);
+                fs.writeFileSync(learnedPath, JSON.stringify(data, null, 2));
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ success: true }));
+            } catch (e) {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: e.message }));
+            }
+        });
+        return;
+    }
+    
     // List available transcripts
     if (url.pathname === '/api/transcripts') {
         const files = fs.existsSync(TRANSCRIPTS_DIR) ? fs.readdirSync(TRANSCRIPTS_DIR) : [];

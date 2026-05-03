@@ -139,8 +139,54 @@
 			let vocabData = {};
 			let currentVideoId = null;
 			let lastRewindTime = 0;
-			let learnedVideos = JSON.parse(localStorage.getItem("learnedVideos") || "[]");
-			let isLearnedPanelCollapsed = JSON.parse(localStorage.getItem("learnedPanelCollapsed") || "true");
+			let learnedVideos = [];
+			let isLearnedPanelCollapsed = true;
+
+			// Load learned videos from server (with localStorage fallback)
+			async function loadLearnedVideos() {
+				try {
+					const response = await fetch("/api/learned");
+					if (response.ok) {
+						const data = await response.json();
+						learnedVideos = data.learnedVideos || [];
+						isLearnedPanelCollapsed = data.learnedPanelCollapsed !== undefined ? data.learnedPanelCollapsed : true;
+						console.log("Loaded learned videos from server:", learnedVideos.length);
+					} else {
+						// Fallback to localStorage
+						learnedVideos = JSON.parse(localStorage.getItem("learnedVideos") || "[]");
+						isLearnedPanelCollapsed = JSON.parse(localStorage.getItem("learnedPanelCollapsed") || "true");
+						console.log("Loaded learned videos from localStorage:", learnedVideos.length);
+					}
+				} catch (e) {
+					// Fallback to localStorage on error
+					learnedVideos = JSON.parse(localStorage.getItem("learnedVideos") || "[]");
+					isLearnedPanelCollapsed = JSON.parse(localStorage.getItem("learnedPanelCollapsed") || "true");
+					console.log("Loaded learned videos from localStorage (error):", learnedVideos.length);
+				}
+			}
+
+			// Save learned videos to server (and localStorage as backup)
+			async function saveLearnedVideos() {
+				const data = { learnedVideos, learnedPanelCollapsed: isLearnedPanelCollapsed };
+				
+				// Always save to localStorage as backup
+				localStorage.setItem("learnedVideos", JSON.stringify(learnedVideos));
+				localStorage.setItem("learnedPanelCollapsed", JSON.stringify(isLearnedPanelCollapsed));
+				
+				// Try to save to server
+				try {
+					const response = await fetch("/api/learned", {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify(data)
+					});
+					if (response.ok) {
+						console.log("Saved learned videos to server");
+					}
+				} catch (e) {
+					console.log("Could not save to server, using localStorage only");
+				}
+			}
 
 			const statusEl = document.getElementById("status");
 			const pauseBtn = document.getElementById("pauseBtn");
@@ -304,7 +350,7 @@
 					learnedVideos.push(currentVideoId);
 				}
 				
-				localStorage.setItem("learnedVideos", JSON.stringify(learnedVideos));
+				saveLearnedVideos();
 				updateLearnedButtonState();
 				loadAvailableTranscripts();
 			}
@@ -319,7 +365,7 @@
 
 			function toggleLearnedPanel() {
 				isLearnedPanelCollapsed = !isLearnedPanelCollapsed;
-				localStorage.setItem("learnedPanelCollapsed", JSON.stringify(isLearnedPanelCollapsed));
+				saveLearnedVideos();
 				
 				const content = document.getElementById("learnedTags");
 				const icon = document.getElementById("learnedToggleIcon");
@@ -594,7 +640,10 @@
 				}
 			}
 
-			window.onload = loadAvailableTranscripts;
+			window.onload = async function() {
+				await loadLearnedVideos();
+				await loadAvailableTranscripts();
+			};
 
 			// Spacebar = toggle pause
 			document.addEventListener("keydown", function (e) {
