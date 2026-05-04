@@ -1,0 +1,167 @@
+{
+  "adivinar": {
+    "translation": "to guess",
+    "pos": "verb",
+    "context": "vas a adivinar qué estoy describiendo"
+  },
+  "describir": {
+    "translation": "to describe",
+    "pos": "verb",
+    "context": "voy a describirlos en español"
+  },
+  "objeto": {
+    "translation": "object",
+    "pos": "noun",
+    "context": "el primer objeto es un objeto largo"
+  },
+  "cable": {
+    "translation": "cable",
+    "pos": "noun",
+    "context": "respuesta es un cable"
+  },
+  "cobre": {
+    "translation": "copper",
+    "pos": "noun",
+    "context": "está hecho de cobre"
+  },
+  "conductor": {
+    "translation": "conductor",
+    "pos": "noun",
+    "context": "cobre es un conductor de electricidad"
+  },
+  "electricidad": {
+    "translation": "electricity",
+    "pos": "noun",
+    "context": "conductor de electricidad"
+  },
+  "capas": {
+    "translation": "layers",
+    "pos": "noun",
+    "context": "objeto hecho de varias capas"
+  },
+  "cilíndrico": {
+    "translation": "cylindrical",
+    "pos": "adjective",
+    "context": "es un objeto cilíndrico"
+  },
+  "desenrolla": {
+    "translation": "unrolls/unwinds",
+    "pos": "verb",
+    "context": "es un cilindro que se desenrolla"
+  },
+  "papel higiénico": {
+    "translation": "toilet paper",
+    "pos": "noun",
+    "context": "segundo objeto es un rollo de papel higiénico"
+  },
+  "lata": {
+    "translation": "can/tin",
+    "pos": "noun",
+    "context": "respuesta es una lata"
+  },
+  "legumbre": {
+    "translation": "legume",
+    "pos": "noun",
+    "context": "legumbre pequeña, redonda, marronácea"
+  },
+  "abrelatas": {
+    "translation": "can opener",
+    "pos": "noun",
+    "context": "tiene un abrelatas en la propia tapa"
+  },
+  "despensa": {
+    "translation": "pantry",
+    "pos": "noun",
+    "context": "algo que pondrías en la despensa"
+  },
+  "fecha de caducidad": {
+    "translation": "expiration date",
+    "pos": "noun",
+    "context": "tiene fecha de caducidad"
+  },
+  "embudo": {
+    "translation": "funnel",
+    "pos": "noun",
+    "context": "respuesta es un embudo"
+  },
+  "cónico": {
+    "translation": "conical",
+    "pos": "adjective",
+    "context": "es redondo y cónico"
+  },
+  "transferir": {
+    "translation": "to transfer",
+    "pos": "verb",
+    "context": "sirve para transferir líquidos"
+  },
+  "martillo": {
+    "translation": "hammer",
+    "pos": "noun",
+    "context": "objeto número cinco es un martillo"
+  },
+  "mango": {
+    "translation": "handle",
+    "pos": "noun",
+    "context": "la parte alargada es un mango"
+  },
+  "clavos": {
+    "translation": "nails",
+    "pos": "noun",
+    "context": "usado para clavar clavos"
+  },
+  "desodorante": {
+    "translation": "deodorant",
+    "pos": "noun",
+    "context": "este objeto era un desodorante"
+  },
+  "higiene personal": {
+    "translation": "personal hygiene",
+    "pos": "noun",
+    "context": "producto de higiene personal"
+  },
+  "olores": {
+    "translation": "odors/smells",
+    "pos": "noun",
+    "context": "sirve para eliminar malos olores"
+  },
+  "axilas": {
+    "translation": "underarms",
+    "pos": "noun",
+    "context": "evita el olor de las axilas"
+  },
+  "papel de aluminio": {
+    "translation": "aluminum foil",
+    "pos": "noun",
+    "context": "esto es un rollo de papel de aluminio"
+  },
+  "maleable": {
+    "translation": "malleable",
+    "pos": "adjective",
+    "context": "es muy maleable"
+  },
+  "envolver": {
+    "translation": "to wrap",
+    "pos": "verb",
+    "context": "sirve para envolver comida"
+  },
+  "termómetro": {
+    "translation": "thermometer",
+    "pos": "noun",
+    "context": "este objeto es un termómetro"
+  },
+  "analógico": {
+    "translation": "analog",
+    "pos": "adjective",
+    "context": "si fuera analógico, si no necesitara pilas"
+  },
+  "temperatura": {
+    "translation": "temperature",
+    "pos": "noun",
+    "context": "sirve para medir la temperatura"
+  },
+  "ambiente": {
+    "translation": "ambient/environment",
+    "pos": "adjective",
+    "context": "temperatura ambiente"
+  }
+}
