@@ -1,0 +1,547 @@
+{
+  "bichos": {
+    "translation": "bugs / microbes",
+    "pos": "noun",
+    "context": "Para tus bichos, tu cuerpo es un ecosistema"
+  },
+  "ecosistema": {
+    "translation": "ecosystem",
+    "pos": "noun",
+    "context": "ecosistema rico en recursos"
+  },
+  "huéspedes": {
+    "translation": "guests / hosts",
+    "pos": "noun",
+    "context": "Algunos de estos huéspedes son bienvenidos"
+  },
+  "inmunitario": {
+    "translation": "immune",
+    "pos": "adjective",
+    "context": "sistema inmunitario"
+  },
+  "guardián": {
+    "translation": "guardian",
+    "pos": "noun",
+    "context": "El guardián de este planeta"
+  },
+  "invasión": {
+    "translation": "invasion",
+    "pos": "noun",
+    "context": "riesgo de invasión constante"
+  },
+  "desgraciadamente": {
+    "translation": "unfortunately",
+    "pos": "adverb",
+    "context": "Desgraciadamente, los enemigos tienen ventaja"
+  },
+  "diminuto": {
+    "translation": "tiny / minute",
+    "pos": "adjective",
+    "context": "el mundo diminuto"
+  },
+  "ventaja": {
+    "translation": "advantage",
+    "pos": "noun",
+    "context": "tienen una enorme ventaja"
+  },
+  "complicado": {
+    "translation": "complicated",
+    "pos": "adjective",
+    "context": "después de un complicado baile"
+  },
+  "multiplicarse": {
+    "translation": "to multiply",
+    "pos": "verb",
+    "context": "se multiplican miriadas de veces"
+  },
+  "remotamente": {
+    "translation": "remotely",
+    "pos": "adverb",
+    "context": "remotamente útil"
+  },
+  "bacteria": {
+    "translation": "bacteria",
+    "pos": "noun",
+    "context": "Una bacteria se compone de una célula"
+  },
+  "virus": {
+    "translation": "virus",
+    "pos": "noun",
+    "context": "Un virus puede convertirse en miles"
+  },
+  "hostil": {
+    "translation": "hostile",
+    "pos": "adjective",
+    "context": "ecosistemas hostiles"
+  },
+  "aplican": {
+    "translation": "apply",
+    "pos": "verb",
+    "context": "aplican presión selectiva"
+  },
+  "presión": {
+    "translation": "pressure",
+    "pos": "noun",
+    "context": "presión selectiva"
+  },
+  "selectiva": {
+    "translation": "selective",
+    "pos": "adjective",
+    "context": "presión selectiva"
+  },
+  "generaciones": {
+    "translation": "generations",
+    "pos": "noun",
+    "context": "sus generaciones se suceden"
+  },
+  "muta": {
+    "translation": "mutates",
+    "pos": "verb",
+    "context": "un individuo que muta"
+  },
+  "adapta": {
+    "translation": "adapts",
+    "pos": "verb",
+    "context": "se adapta justo de la manera adecuada"
+  },
+  "resistir": {
+    "translation": "to resist",
+    "pos": "verb",
+    "context": "resistir nuestras defensas"
+  },
+  "defensas": {
+    "translation": "defenses",
+    "pos": "noun",
+    "context": "resistir nuestras defensas"
+  },
+  "desarrollada": {
+    "translation": "developed",
+    "pos": "adjective",
+    "context": "una copia totalmente desarrollada"
+  },
+  "variedad": {
+    "translation": "variety",
+    "pos": "noun",
+    "context": "total variedad interminable"
+  },
+  "interminable": {
+    "translation": "endless",
+    "pos": "adjective",
+    "context": "variedad interminable"
+  },
+  "evolución": {
+    "translation": "evolution",
+    "pos": "noun",
+    "context": "ritmo de evolución"
+  },
+  "alucinante": {
+    "translation": "mind-blowing / amazing",
+    "pos": "adjective",
+    "context": "lo más alucinante que haya jamás"
+  },
+  "complicado": {
+    "translation": "complicated",
+    "pos": "adjective",
+    "context": "sistema más complicado"
+  },
+  "sofisticado": {
+    "translation": "sophisticated",
+    "pos": "adjective",
+    "context": "tan sofisticado"
+  },
+  "simplificar": {
+    "translation": "to simplify",
+    "pos": "verb",
+    "context": "debemos simplificar"
+  },
+  "inato": {
+    "translation": "innate",
+    "pos": "adjective",
+    "context": "sistema inmunitario inato"
+  },
+  "adquirido": {
+    "translation": "acquired",
+    "pos": "adjective",
+    "context": "sistema inmunitario adquirido"
+  },
+  "especializados": {
+    "translation": "specialized",
+    "pos": "adjective",
+    "context": "soldados no especializados"
+  },
+  "desplegar": {
+    "translation": "to deploy",
+    "pos": "verb",
+    "context": "lentas de desplegar"
+  },
+  "impacto": {
+    "translation": "impact",
+    "pos": "noun",
+    "context": "producen un enorme impacto"
+  },
+  "biblioteca": {
+    "translation": "library",
+    "pos": "noun",
+    "context": "la mayor biblioteca del universo"
+  },
+  "peste": {
+    "translation": "plague",
+    "pos": "noun",
+    "context": "la peste negra"
+  },
+  "negra": {
+    "translation": "black",
+    "pos": "adjective",
+    "context": "la peste negra"
+  },
+  "contrarrestar": {
+    "translation": "to counteract",
+    "pos": "verb",
+    "context": "permite contrarrestar la capacidad"
+  },
+  "capacidad": {
+    "translation": "capacity / ability",
+    "pos": "noun",
+    "context": "capacidad que tienen de mutar"
+  },
+  "perspectiva": {
+    "translation": "perspective",
+    "pos": "noun",
+    "context": "debemos tomar perspectiva"
+  },
+  "organismos": {
+    "translation": "organisms",
+    "pos": "noun",
+    "context": "Todos los organismos terrestres"
+  },
+  "terrestres": {
+    "translation": "terrestrial / earthly",
+    "pos": "adjective",
+    "context": "organismos terrestres"
+  },
+  "proteínas": {
+    "translation": "proteins",
+    "pos": "noun",
+    "context": "principalmente proteínas"
+  },
+  "ladrillos": {
+    "translation": "bricks / building blocks",
+    "pos": "noun",
+    "context": "los ladrillos de la vida"
+  },
+  "piezas": {
+    "translation": "pieces / parts",
+    "pos": "noun",
+    "context": "piezas de rompecabezas 3D"
+  },
+  "rompecabezas": {
+    "translation": "puzzle",
+    "pos": "noun",
+    "context": "piezas de rompecabezas"
+  },
+  "importa": {
+    "translation": "it matters",
+    "pos": "expression",
+    "context": "¿Y qué importa?"
+  },
+  "idioma": {
+    "translation": "language",
+    "pos": "noun",
+    "context": "el idioma del micromundo"
+  },
+  "micromundo": {
+    "translation": "microworld",
+    "pos": "noun",
+    "context": "el micromundo"
+  },
+  "carecen": {
+    "translation": "lack / are deprived of",
+    "pos": "verb",
+    "context": "carecen de ojos u oídos"
+  },
+  "distinguir": {
+    "translation": "to distinguish",
+    "pos": "verb",
+    "context": "distinguir amigos de enemigos"
+  },
+  "receptores": {
+    "translation": "receptors",
+    "pos": "noun",
+    "context": "dispositivos diminutos denominados receptores"
+  },
+  "conectarse": {
+    "translation": "to connect",
+    "pos": "verb",
+    "context": "capaces de conectarse"
+  },
+  "encajar": {
+    "translation": "to fit / match",
+    "pos": "verb",
+    "context": "capaces de encajar"
+  },
+  "reconocer": {
+    "translation": "to recognize",
+    "pos": "verb",
+    "context": "reconocer con otras piezas"
+  },
+  "invasor": {
+    "translation": "invader",
+    "pos": "noun",
+    "context": "combatir al invasor"
+  },
+  "distinción": {
+    "translation": "distinction",
+    "pos": "noun",
+    "context": "hacer esta distinción"
+  },
+  "constante": {
+    "translation": "constant",
+    "pos": "adjective",
+    "context": "cambian un poquitín constantemente"
+  },
+  "ineficaces": {
+    "translation": "ineffective",
+    "pos": "adjective",
+    "context": "son ineficaces frente a"
+  },
+  "mutaciones": {
+    "translation": "mutations",
+    "pos": "noun",
+    "context": "billones de mutaciones"
+  },
+  "preparado": {
+    "translation": "prepared / ready",
+    "pos": "adjective",
+    "context": "estar listo para cada posible enemigo"
+  },
+  "mezclar": {
+    "translation": "to mix",
+    "pos": "verb",
+    "context": "mezclan y acoplan su código genético"
+  },
+  "acoplar": {
+    "translation": "to match / couple",
+    "pos": "verb",
+    "context": "mezclan y acoplan su código"
+  },
+  "asombrosa": {
+    "translation": "amazing / astonishing",
+    "pos": "adjective",
+    "context": "esta asombrosa variedad"
+  },
+  "resumiremos": {
+    "translation": "we will summarize",
+    "pos": "verb",
+    "context": "lo resumiremos diciendo"
+  },
+  "permiso": {
+    "translation": "permission",
+    "pos": "noun",
+    "context": "tienen permiso oficial"
+  },
+  "oficial": {
+    "translation": "official",
+    "pos": "adjective",
+    "context": "permiso oficial"
+  },
+  "aleatoriamente": {
+    "translation": "randomly",
+    "pos": "adverb",
+    "context": "mezclan aleatoriamente"
+  },
+  "cocineros": {
+    "translation": "chefs / cooks",
+    "pos": "noun",
+    "context": "un ejército de cocineros"
+  },
+  "ingredientes": {
+    "translation": "ingredients",
+    "pos": "noun",
+    "context": "100 ingredientes distintos"
+  },
+  "metáfora": {
+    "translation": "metaphor",
+    "pos": "noun",
+    "context": "en esta metáfora"
+  },
+  "postre": {
+    "translation": "dessert",
+    "pos": "noun",
+    "context": "como postre"
+  },
+  "combinaciones": {
+    "translation": "combinations",
+    "pos": "noun",
+    "context": "10,000 millones de combinaciones posibles"
+  },
+  "topamos": {
+    "translation": "we run into / encounter",
+    "pos": "verb",
+    "context": "nos topamos con un problema"
+  },
+  "peligroso": {
+    "translation": "dangerous",
+    "pos": "adjective",
+    "context": "un problema bastante peligroso"
+  },
+  "supervivencia": {
+    "translation": "survival",
+    "pos": "noun",
+    "context": "peligroso para la supervivencia"
+  },
+  "exclusiva": {
+    "translation": "exclusive",
+    "pos": "adjective",
+    "context": "trabaja en exclusiva"
+  },
+  "timo": {
+    "translation": "thymus",
+    "pos": "noun",
+    "context": "El timo, la universidad del homicidio"
+  },
+  "homicidio": {
+    "translation": "homicide",
+    "pos": "noun",
+    "context": "la universidad del homicidio"
+  },
+  "corazón": {
+    "translation": "heart",
+    "pos": "noun",
+    "context": "situado por encima del corazón"
+  },
+  "curiosidad": {
+    "translation": "curiosity",
+    "pos": "noun",
+    "context": "Una curiosidad del timo"
+  },
+  "declive": {
+    "translation": "decline",
+    "pos": "noun",
+    "context": "entra en declive"
+  },
+  "pubertad": {
+    "translation": "puberty",
+    "pos": "noun",
+    "context": "tras la pubertad"
+  },
+  "intensivo": {
+    "translation": "intensive",
+    "pos": "adjective",
+    "context": "un curso intensivo"
+  },
+  "mortífero": {
+    "translation": "deadly",
+    "pos": "adjective",
+    "context": "mortífero"
+  },
+  "ordenar": {
+    "translation": "to order / command",
+    "pos": "verb",
+    "context": "el profesor la ordena"
+  },
+  "suicidarse": {
+    "translation": "to commit suicide",
+    "pos": "verb",
+    "context": "ordena a suicidarse"
+  },
+  "recicla": {
+    "translation": "recycles",
+    "pos": "verb",
+    "context": "se recicla"
+  },
+  "tiquis miquis": {
+    "translation": "picky / fussy",
+    "pos": "expression",
+    "context": "Es tan tiquis miquis en este proceso"
+  },
+  "gradúa": {
+    "translation": "graduates",
+    "pos": "verb",
+    "context": "solo se gradúa un 2%"
+  },
+  "escapan": {
+    "translation": "escape",
+    "pos": "verb",
+    "context": "escapan células"
+  },
+  "originarse": {
+    "translation": "to originate",
+    "pos": "verb",
+    "context": "pueden originarse enfermedades"
+  },
+  "autoinmunes": {
+    "translation": "autoimmune",
+    "pos": "adjective",
+    "context": "enfermedades autoinmunes"
+  },
+  "resumamos": {
+    "translation": "let's summarize",
+    "pos": "verb",
+    "context": "resumamos"
+  },
+  "arrancar": {
+    "translation": "to start up",
+    "pos": "verb",
+    "context": "hay que arrancar primero"
+  },
+  "recombinan": {
+    "translation": "recombine",
+    "pos": "verb",
+    "context": "recombinan partes de su código genético"
+  },
+  "ventana": {
+    "translation": "window",
+    "pos": "noun",
+    "context": "una minusculísima ventana"
+  },
+  "minusculísima": {
+    "translation": "tiny / minuscule",
+    "pos": "adjective",
+    "context": "una minusculísima ventana"
+  },
+  "desarrolla": {
+    "translation": "unfolds / develops",
+    "pos": "verb",
+    "context": "se desarrolla a diario"
+  },
+  "misterioso": {
+    "translation": "mysterious",
+    "pos": "adjective",
+    "context": "el misterioso sistema"
+  },
+  "redactor": {
+    "translation": "writer / editor",
+    "pos": "noun",
+    "context": "fundador y redactor principal"
+  },
+  "propia": {
+    "translation": "own",
+    "pos": "adjective",
+    "context": "nuestra propia forma de pensar"
+  },
+  "profundidad": {
+    "translation": "depth",
+    "pos": "noun",
+    "context": "con mayor profundidad"
+  },
+  "microverso": {
+    "translation": "microverse",
+    "pos": "noun",
+    "context": "el oculto microverso de nuestro cuerpo"
+  },
+  "testigos": {
+    "translation": "witnesses",
+    "pos": "noun",
+    "context": "Sean testigos de las guerras"
+  },
+  "patrocinado": {
+    "translation": "sponsored",
+    "pos": "adjective",
+    "context": "Este video ha sido patrocinado"
+  },
+  "obligado": {
+    "translation": "obligated",
+    "pos": "adjective",
+    "context": "no debe sentirse obligado"
+  }
+}
