@@ -380,15 +380,26 @@ button:disabled {
 	transform: translateX(-50%);
 	background: var(--tooltip-bg);
 	color: var(--tooltip-text);
-	padding: 0.5rem 0.75rem;
+	padding: 0.75rem 1rem;
 	border-radius: var(--radius-md);
 	font-size: 1.5rem;
 	font-family: "Nunito", sans-serif;
-	white-space: nowrap;
+	white-space: normal;
+	max-width: 300px;
+	text-align: center;
 	pointer-events: none;
 	z-index: 100;
 	border: 1px solid var(--border);
 	box-shadow: 0 2px 8px var(--tooltip-shadow);
+	line-height: 1.5;
+}
+
+.vocab-word:hover::after strong {
+	display: block;
+	font-size: 1.2rem;
+	color: var(--text-accent);
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
 }
 
 /* Learned transcripts panel */

@@ -11,6 +11,9 @@ const http = require('http');
 const fs = require('fs');
 const { PORT, TRANSCRIPTS_DIR, VOCAB_DIR } = require('./src/config');
 const { runVocab } = require('./src/commands/vocab');
+const { runVocabAI } = require('./src/commands/vocab-ai');
+const { runVocabAIApply } = require('./src/commands/vocab-ai-apply');
+const { runVocabAuto } = require('./src/commands/vocab-auto');
 const { runTranslate } = require('./src/commands/translate');
 const { runLint } = require('./src/commands/lint');
 const { setupRoutes } = require('./src/routes');
@@ -24,6 +27,26 @@ if (!fs.existsSync(VOCAB_DIR)) {
 }
 
 // === CLI COMMANDS ===
+if (process.argv.includes('vocab-auto-apply')) {
+    runVocabAIApply();
+    process.exit(0);
+}
+
+if (process.argv.includes('vocab-auto') || process.argv.includes('vocabauto')) {
+    runVocabAuto();
+    process.exit(0);
+}
+
+if (process.argv.includes('vocab-ai-apply') || process.argv.includes('vocabaiapply')) {
+    runVocabAIApply();
+    process.exit(0);
+}
+
+if (process.argv.includes('vocab-ai') || process.argv.includes('vocabai')) {
+    runVocabAI();
+    process.exit(0);
+}
+
 if (process.argv.includes('vocab')) {
     runVocab();
     process.exit(0);

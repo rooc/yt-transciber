@@ -193,10 +193,21 @@ function wrapVocabWords(text) {
 
 	let result = text;
 	for (const match of matches) {
-		const translation = vocabData[match.word].replace(/"/g, '&quot;');
+		const vocabEntry = vocabData[match.word];
+		// Handle both old format (string) and new format (object)
+		const translation = typeof vocabEntry === 'string' 
+			? vocabEntry 
+			: (vocabEntry?.translation || match.word);
+		const pos = typeof vocabEntry === 'object' ? vocabEntry?.pos : null;
+		
+		let tooltipContent = translation.replace(/"/g, '&quot;');
+		if (pos) {
+			tooltipContent = `<strong>${pos}</strong><br>${tooltipContent}`;
+		}
+		
 		const before = result.slice(0, match.start);
 		const after = result.slice(match.end);
-		const wrapped = `<span class="vocab-word" data-en="${translation}">${match.text}</span>`;
+		const wrapped = `<span class="vocab-word" data-en="${tooltipContent}">${match.text}</span>`;
 		result = before + wrapped + after;
 	}
 
