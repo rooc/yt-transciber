@@ -1,5 +1,5 @@
 /**
- * Translate command — cleans transcripts and generates vocab with AI.
+ * Translate command — cleans transcripts and prepares for AI translation.
  *
  * Run with:
  *   node server.js translate
@@ -7,137 +7,28 @@
  * Performs three steps for every original transcript:
  *   1. Clean markdown (strip headings, section dividers, blank lines)
  *   2. Create missing `_translation.md` placeholder files (if missing)
- *   3. Create/update `_vocab.json` files with AI translations (Qwen3.5 Plus)
+ *   3. Create `_vocab.json` files with `[translation needed]` placeholders
+ *   4. Generate `VOCAB_AI_PROMPT.md` for AI translation
  *
- * Use --free flag for translate-shell instead of AI:
- *   node server.js translate --free
+ * After running, copy VOCAB_AI_PROMPT.md to your AI (ChatGPT, Claude, Qwen3.5 Plus)
+ * and apply the response with: node server.js vocab-ai-apply response.json
  */
 const path = require('path');
 const fs = require('fs');
-const { execSync, spawn } = require('child_process');
 const { TRANSCRIPTS_DIR, VOCAB_DIR } = require('../config');
 const { findTranscriptFiles, readTranscript, writeTranscript, writeVocab } = require('../store');
 const { loadExcludedWords } = require('../exclusions');
 
 /**
- * Batch translate words using translate-shell (free option).
- *
- * @param {string[]} words
- * @returns {string[]}
- */
-function batchTranslateShell(words) {
-    try {
-        const output = execSync('trans -b es:en -no-auto', {
-            input: words.join('\n'),
-            encoding: 'utf-8',
-            timeout: 120000,
-        });
-        return output.trim().split('\n');
-    } catch (e) {
-        console.error('     Translation error:', e.message);
-        return words.map(() => '[translation needed]');
-    }
-}
-
-/**
- * Call Qwen3.5 Plus via opencode CLI for AI translation.
- *
- * @param {string[]} words
- * @returns {Promise<Object.<string, { translation: string, pos: string }>>}
- */
-async function batchTranslateAI(words) {
-    return new Promise((resolve, reject) => {
-        const prompt = `Translate these Spanish words to English. Respond ONLY with valid JSON.
-
-Format: {"word": {"translation": "english", "pos": "noun"}}
-
-Words: ${words.join(', ')}
-
-Example: {"gato": {"translation": "cat", "pos": "noun"}}`;
-
-        const opencode = spawn('opencode', [
-            'run',
-            '--model', 'opencode-go/qwen3.5-plus',
-            '--format', 'json',
-            '--'
-        ], {
-            stdio: ['pipe', 'pipe', 'pipe']
-        });
-
-        let output = '';
-
-        opencode.stdout.on('data', (data) => {
-            const lines = data.toString().split('\n');
-            lines.forEach(line => {
-                if (line.trim()) {
-                    try {
-                        const event = JSON.parse(line);
-                        if (event.type === 'text' && event.part?.text) {
-                            output += event.part.text;
-                        }
-                    } catch (e) {
-                        // Ignore non-JSON lines
-                    }
-                }
-            });
-        });
-
-        opencode.stderr.on('data', (data) => {
-            process.stderr.write(data);
-        });
-
-        opencode.on('close', (code) => {
-            try {
-                const jsonMatch = output.match(/\{[\s\S]*\}/);
-                const jsonStr = jsonMatch ? jsonMatch[0] : output;
-                const result = JSON.parse(jsonStr);
-                resolve(result);
-            } catch (e) {
-                console.error('\n     AI parse error:', e.message);
-                // Fallback: return words as translation needed
-                const fallback = {};
-                words.forEach(w => fallback[w] = { translation: '[translation needed]', pos: null });
-                resolve(fallback);
-            }
-        });
-
-        opencode.on('error', (e) => {
-            console.error('\n     AI error:', e.message);
-            const fallback = {};
-            words.forEach(w => fallback[w] = { translation: '[translation needed]', pos: null });
-            resolve(fallback);
-        });
-
-        opencode.stdin.write(prompt);
-        opencode.stdin.end();
-
-        // Timeout after 3 minutes
-        setTimeout(() => {
-            opencode.kill('SIGTERM');
-            const fallback = {};
-            words.forEach(w => fallback[w] = { translation: '[translation needed]', pos: null });
-            resolve(fallback);
-        }, 180000);
-    });
-}
-
-/**
  * Execute the translate pipeline and print a report to stdout.
  */
-async function runTranslate() {
-    const useFreeShell = process.argv.includes('--free');
-
+function runTranslate() {
     console.log('\n=== TRANSLATE: Processing transcripts ===\n');
-    console.log(`Mode: ${useFreeShell ? 'Free (translate-shell)' : 'AI (Qwen3.5 Plus)'}\n`);
 
-    /** @type {string[]} */
     const cleanedFiles = [];
-    /** @type {string[]} */
     const translationsCreated = [];
-    /** @type {string[]} */
     const vocabCreated = [];
-    /** @type {string[]} */
-    const vocabUpdated = [];
+    const vocabByVideo = {};
 
     const transcriptFiles = findTranscriptFiles();
 
@@ -237,11 +128,10 @@ source: "${sourceMatch[1]}"
             translationsCreated.push(`${videoId}_translation.md`);
         }
 
-        // --- Step 3: Create/update vocabulary file with translations ---
+        // --- Step 3: Create vocab file with placeholders ---
         const vocabPath = path.join(VOCAB_DIR, `${videoId}_vocab.json`);
         const excludedWords = loadExcludedWords();
 
-        /** @type {Object.<string, any>} */
         let vocab = {};
         let isNewFile = false;
 
@@ -253,7 +143,6 @@ source: "${sourceMatch[1]}"
 
         // Extract words from transcript
         const transcriptLines = content.match(/\*\*\d{1,2}:\d{2}[^·]*·\s*(.+)/g) || [];
-        const newWords = [];
 
         transcriptLines.forEach(line => {
             const text = line.replace(/^\*\*[^·]+·\s*/, '');
@@ -261,73 +150,28 @@ source: "${sourceMatch[1]}"
             words.forEach(word => {
                 if (word.length > 3 && !excludedWords.has(word) && !vocab[word]) {
                     vocab[word] = '[translation needed]';
-                    newWords.push(word);
                 }
             });
         });
 
-        // Find all untranslated words (both new and existing)
+        // Collect words for AI prompt
         const untranslated = Object.keys(vocab).filter(w => {
             const entry = vocab[w];
             return typeof entry === 'string' || !entry?.translation;
         });
 
         if (untranslated.length > 0) {
-            console.log(`  📚 ${filename}: translating ${untranslated.length} words with ${useFreeShell ? 'translate-shell' : 'AI'}...`);
-
-            if (useFreeShell) {
-                // === Free translate-shell mode ===
-                const batchSize = 50;
-                let translatedCount = 0;
-
-                for (let i = 0; i < untranslated.length; i += batchSize) {
-                    const batch = untranslated.slice(i, i + batchSize);
-                    const translations = batchTranslateShell(batch);
-
-                    batch.forEach((word, idx) => {
-                        const t = translations[idx]?.trim().toLowerCase() || '[translation needed]';
-                        if (t && t !== '') {
-                            vocab[word] = t;
-                            translatedCount++;
-                        }
-                    });
-
-                    process.stdout.write(`\r     Progress: ${Math.min(i + batchSize, untranslated.length)}/${untranslated.length}`);
-                }
-
-                console.log('');
-                console.log(`     Done: ${translatedCount}/${untranslated.length} translated`);
-            } else {
-                // === AI mode ===
-                const batchSize = 100;
-                let translatedCount = 0;
-
-                for (let i = 0; i < untranslated.length; i += batchSize) {
-                    const batch = untranslated.slice(i, i + batchSize);
-                    console.log(`     Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(untranslated.length / batchSize)}...`);
-
-                    const translations = await batchTranslateAI(batch);
-
-                    Object.entries(translations).forEach(([word, data]) => {
-                        if (data && data.translation) {
-                            vocab[word] = {
-                                translation: data.translation.toLowerCase(),
-                                pos: data.pos || null
-                            };
-                            translatedCount++;
-                        }
-                    });
-
-                    console.log(`     ✓ Batch complete: ${Object.keys(translations).length} words translated`);
-                }
-
-                console.log(`     Done: ${translatedCount}/${untranslated.length} translated`);
-            }
+            vocabByVideo[videoId] = {
+                filename,
+                words: untranslated,
+                vocab
+            };
+            console.log(`  📚 ${filename}: ${untranslated.length} words need translation`);
         } else {
             console.log(`  ✅ ${filename}: all words already translated`);
         }
 
-        // Sort and save
+        // Sort and save vocab (with placeholders)
         const sortedVocab = {};
         Object.keys(vocab).sort().forEach(key => {
             sortedVocab[key] = vocab[key];
@@ -337,9 +181,26 @@ source: "${sourceMatch[1]}"
 
         if (isNewFile) {
             vocabCreated.push(`${videoId}_vocab.json`);
-        } else if (newWords.length > 0 || untranslated.length > 0) {
-            vocabUpdated.push(`${videoId}_vocab.json`);
         }
+    }
+
+    // --- Step 4: Generate AI prompt if there are untranslated words ---
+    if (Object.keys(vocabByVideo).length > 0) {
+        const prompt = buildAIPrompt(vocabByVideo);
+        const promptPath = path.join(TRANSCRIPTS_DIR, '..', 'VOCAB_AI_PROMPT.md');
+        fs.writeFileSync(promptPath, prompt);
+
+        const allWords = Object.values(vocabByVideo).flatMap(v => v.words);
+        const uniqueWords = [...new Set(allWords)].length;
+
+        console.log('\n📝 AI Translation Prompt');
+        console.log(`   Generated: VOCAB_AI_PROMPT.md`);
+        console.log(`   Words to translate: ${uniqueWords}`);
+        console.log('\n   Next steps:');
+        console.log('   1. Copy VOCAB_AI_PROMPT.md content');
+        console.log('   2. Paste to AI (ChatGPT, Claude, Qwen3.5 Plus)');
+        console.log('   3. Save JSON response as: ai-response.json');
+        console.log('   4. Apply: node server.js vocab-ai-apply ai-response.json');
     }
 
     // --- Report ---
@@ -368,17 +229,46 @@ source: "${sourceMatch[1]}"
         vocabCreated.forEach(f => console.log(`   - ${f}`));
     }
 
-    if (vocabUpdated.length > 0) {
-        console.log(`🔄 Updated ${vocabUpdated.length} vocabulary file(s):`);
-        vocabUpdated.forEach(f => console.log(`   - ${f}`));
-    }
+    console.log('');
 
-    if (vocabCreated.length === 0 && vocabUpdated.length === 0) {
-        console.log('✅ All vocabulary files up to date');
-    }
-
-    console.log(`\n💰 Cost: ${useFreeShell ? 'Free' : '$0 (covered by opencode-go subscription)'}`);
     console.log('\n=== TRANSLATE COMPLETE ===\n');
+}
+
+/**
+ * Build AI translation prompt.
+ */
+function buildAIPrompt(vocabByVideo) {
+    const allWords = Object.values(vocabByVideo).flatMap(v => v.words);
+    const uniqueWords = [...new Set(allWords)].sort();
+
+    let prompt = `# AI Vocabulary Translation
+
+Translate these ${uniqueWords.length} Spanish words to English.
+
+## Format
+Respond **ONLY** with valid JSON. No markdown, no explanations.
+
+## JSON Structure
+For each word:
+- **translation**: English meaning (1-3 words, lowercase)
+- **pos**: Part of speech (noun, verb, adjective) - optional
+
+Example:
+\`\`\`json
+{
+  "gato": { "translation": "cat", "pos": "noun" },
+  "correr": { "translation": "to run", "pos": "verb" }
+}
+\`\`\`
+
+## Words to Translate
+${uniqueWords.join(', ')}
+
+---
+
+**Respond ONLY with the JSON object. Start with { and end with }.**`;
+
+    return prompt;
 }
 
 module.exports = { runTranslate };
