@@ -203,9 +203,6 @@ function wrapVocabWords(text) {
 		const pos = typeof vocabEntry === 'object' ? vocabEntry?.pos : null;
 		
 		let tooltipContent = translation.replace(/"/g, '&quot;');
-		if (pos) {
-			tooltipContent = `<strong>${pos}</strong><br>${tooltipContent}`;
-		}
 		
 		const before = result.slice(0, match.start);
 		const after = result.slice(match.end);
@@ -428,6 +425,19 @@ function toggleLearnedPanel() {
 	icon.textContent = isLearnedPanelCollapsed ? "chevron_right" : "expand_more";
 }
 
+// Copy video ID to clipboard
+function copyVideoId(videoId) {
+	navigator.clipboard.writeText(videoId).then(() => {
+		setStatus(`Copied: ${videoId}`);
+		setTimeout(() => {
+			updateDisplay();
+		}, 2000);
+	}).catch(err => {
+		console.error('Failed to copy:', err);
+		setStatus('Failed to copy ID');
+	});
+}
+
 // --- Delete Transcript ---
 
 async function deleteTranscript() {
@@ -496,11 +506,9 @@ async function loadAvailableTranscripts() {
 		} else {
 			tagsContainer.innerHTML = unlearned
 				.map((t) => {
-					const title = t.title || t.videoId;
-					const icon = t.hasTranslation
-						? '<span class="material-icons icon-sm">translate</span>'
-						: '<span class="material-icons icon-sm warning" title="No translation">error_outline</span>';
-					return `<span class="transcript-tag" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${title}">${title} ${icon}</span>`;
+					const shortTitle = t.title || t.videoId;
+					const fullTitle = t.fullTitle || shortTitle;
+					return `<span class="transcript-tag" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
 				})
 				.join("");
 		}
@@ -510,11 +518,9 @@ async function loadAvailableTranscripts() {
 		} else {
 			learnedContainer.innerHTML = learned
 				.map((t) => {
-					const title = t.title || t.videoId;
-					const icon = t.hasTranslation
-						? '<span class="material-icons icon-sm">translate</span>'
-						: '<span class="material-icons icon-sm warning" title="No translation">error_outline</span>';
-					return `<span class="transcript-tag learned" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${title}">${title} ${icon}</span>`;
+					const shortTitle = t.title || t.videoId;
+					const fullTitle = t.fullTitle || shortTitle;
+					return `<span class="transcript-tag learned" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
 				})
 				.join("");
 		}

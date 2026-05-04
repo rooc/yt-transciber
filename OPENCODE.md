@@ -383,6 +383,30 @@ The AI will:
 
 ---
 
+### Delete Transcript
+**Command:** `"delete VIDEO_ID"` or `"remove VIDEO_ID"`
+
+Removes a transcript and all associated files:
+- `transcripts/VIDEO_ID.md`
+- `transcripts/VIDEO_ID_translation.md`
+- `vocab/VIDEO_ID_vocab.json`
+- Progress data
+- Learned status
+
+**How to use:**
+Just say: `"delete 087XVp3JIpk"` or `"remove Psb9g9UxqZs"`
+
+The AI will:
+- Confirm which files will be deleted
+- Ask for your confirmation
+- Delete all associated files
+- Report what was removed
+
+**Note:** This cannot be undone! Make sure you want to delete before confirming.
+
+---
+
 **Ready to work! Just say:**
 - `"translate new"` - Translate all new transcripts
 - `"check files"` - Run validation and cleanup
+- `"delete VIDEO_ID"` - Remove a transcript

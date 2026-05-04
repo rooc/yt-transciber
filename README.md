@@ -54,12 +54,10 @@ Open http://localhost:7070
 2. **Clip YouTube video**:
    - Open any YouTube video
    - Click the Clipper icon → Click **Clip**
-   - Saves to `transcripts/` folder automatically
+   - Save file and put it in transcipts folder
 
 3. **Rename file** to video ID:
-   ```bash
-   mv transcripts/"Video Title.md" transcripts/VIDEO_ID.md
-   ```
+   - transcripts/"Video Title.md" transcripts/VIDEO_ID.md
 
 The default template already includes title and URL, which is all you need.
 
@@ -129,6 +127,11 @@ Validates and cleans up:
 - Orphaned files
 - Empty translations  
 - Vocabulary cleanup
+
+### Delete Transcript
+**Command:** `"delete VIDEO_ID"` or `"remove VIDEO_ID"`
+
+Removes a transcript and all associated files (translation, vocab, progress, learned status).
 
 ## Workflow
 
