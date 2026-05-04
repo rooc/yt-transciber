@@ -32,10 +32,6 @@ const pauseBtn = document.getElementById("pauseBtn");
 const dualBtn = document.getElementById("dualBtn");
 const fsPauseBtn = document.getElementById("fsPauseBtn");
 const fsDualBtn = document.getElementById("fsDualBtn");
-const learnBtn = document.getElementById("learnBtn");
-const fsLearnBtn = document.getElementById("fsLearnBtn");
-const deleteBtn = document.getElementById("deleteBtn");
-const fsDeleteBtn = document.getElementById("fsDeleteBtn");
 const transcriptContainer = document.getElementById("transcript");
 
 // --- Learned Videos (server + localStorage) ---
@@ -303,13 +299,6 @@ function togglePause() {
 	saveVideoProgress();
 }
 
-function syncVideo() {
-	if (player) {
-		player.seekTo(currentTime, true);
-		setStatus(`Synced video to ${formatTime(currentTime)}`);
-	}
-}
-
 function restartVideo() {
 	currentTime = 0;
 	activeIndex = -1;
@@ -378,40 +367,35 @@ function toggleFullscreen() {
 	}
 	fsPauseBtn.classList.toggle("active", isPaused);
 	fsDualBtn.classList.toggle("active", isDualMode);
-	updateLearnedButtonState();
 }
 
 // --- Learned Tracking ---
 
-function toggleLearned() {
-	if (!currentVideoId) return;
+function toggleLearned(videoId) {
+	if (!videoId) return;
 
-	const index = learnedVideos.indexOf(currentVideoId);
+	const index = learnedVideos.indexOf(videoId);
 	if (index > -1) {
 		learnedVideos.splice(index, 1);
 	} else {
-		learnedVideos.push(currentVideoId);
+		learnedVideos.push(videoId);
+	}
+
+	// Reset progress for this video
+	if (videoProgress[videoId]) {
+		delete videoProgress[videoId];
+		localStorage.setItem("videoProgress", JSON.stringify(videoProgress));
+		// Also save to server
+		fetch("/api/progress", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(videoProgress)
+		}).catch(() => {});
+		setStatus(`Progress reset for video`);
 	}
 
 	saveLearnedVideos();
-	updateLearnedButtonState();
 	loadAvailableTranscripts();
-}
-
-function updateLearnedButtonState() {
-	const isLearned = learnedVideos.includes(currentVideoId);
-	learnBtn.classList.toggle("active", isLearned);
-	fsLearnBtn.classList.toggle("active", isLearned);
-	learnBtn.title = isLearned ? "Mark as not learned (L)" : "Mark as learned (L)";
-	fsLearnBtn.title = isLearned ? "Mark as not learned (L)" : "Mark as learned (L)";
-}
-
-function updateDeleteButtonState() {
-	const hasVideo = !!currentVideoId;
-	deleteBtn.disabled = !hasVideo;
-	if (fsDeleteBtn) fsDeleteBtn.disabled = !hasVideo;
-	deleteBtn.title = hasVideo ? "Delete transcript (⌫)" : "Select a transcript first";
-	if (fsDeleteBtn) fsDeleteBtn.title = hasVideo ? "Delete transcript (⌫)" : "Select a transcript first";
 }
 
 function toggleLearnedPanel() {
@@ -425,6 +409,83 @@ function toggleLearnedPanel() {
 	icon.textContent = isLearnedPanelCollapsed ? "chevron_right" : "expand_more";
 }
 
+// --- Drag and Drop ---
+
+function setupDragAndDrop() {
+	const tags = document.querySelectorAll('.transcript-tag[draggable="true"]');
+	const availablePanel = document.getElementById('transcriptTags');
+	const learnedPanel = document.getElementById('learnedTags');
+
+	tags.forEach(tag => {
+		tag.addEventListener('dragstart', handleDragStart);
+		tag.addEventListener('dragend', handleDragEnd);
+	});
+
+	[availablePanel, learnedPanel].forEach(panel => {
+		if (panel) {
+			panel.addEventListener('dragover', handleDragOver);
+			panel.addEventListener('dragenter', handleDragEnter);
+			panel.addEventListener('dragleave', handleDragLeave);
+			panel.addEventListener('drop', handleDrop);
+		}
+	});
+}
+
+let draggedVideoId = null;
+
+function handleDragStart(e) {
+	draggedVideoId = this.dataset.videoid;
+	this.classList.add('dragging');
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData('text/plain', draggedVideoId);
+}
+
+function handleDragEnd(e) {
+	this.classList.remove('dragging');
+	draggedVideoId = null;
+
+	// Remove drag-over styling from all panels
+	document.querySelectorAll('.drag-over').forEach(el => {
+		el.classList.remove('drag-over');
+	});
+}
+
+function handleDragOver(e) {
+	e.preventDefault();
+	e.dataTransfer.dropEffect = 'move';
+}
+
+function handleDragEnter(e) {
+	e.preventDefault();
+	this.classList.add('drag-over');
+}
+
+function handleDragLeave(e) {
+	this.classList.remove('drag-over');
+}
+
+function handleDrop(e) {
+	e.preventDefault();
+	this.classList.remove('drag-over');
+
+	const videoId = e.dataTransfer.getData('text/plain');
+	if (!videoId) return;
+
+	// Determine which panel we dropped on
+	const isLearnedPanel = this.id === 'learnedTags';
+	const isCurrentlyLearned = learnedVideos.includes(videoId);
+
+	// Toggle learned status based on drop target
+	if (isLearnedPanel && !isCurrentlyLearned) {
+		// Dropped on learned panel but not learned yet - mark as learned
+		toggleLearned(videoId);
+	} else if (!isLearnedPanel && isCurrentlyLearned) {
+		// Dropped on available panel but is learned - unmark as learned
+		toggleLearned(videoId);
+	}
+	// If dropped on same panel, do nothing
+}
+
 // Copy video ID to clipboard
 function copyVideoId(videoId) {
 	navigator.clipboard.writeText(videoId).then(() => {
@@ -436,56 +497,6 @@ function copyVideoId(videoId) {
 		console.error('Failed to copy:', err);
 		setStatus('Failed to copy ID');
 	});
-}
-
-// --- Delete Transcript ---
-
-async function deleteTranscript() {
-	if (!currentVideoId) {
-		alert('No transcript selected to delete');
-		return;
-	}
-
-	const transcript = availableTranscripts.find(t => t.videoId === currentVideoId);
-	const title = transcript ? transcript.title : currentVideoId;
-
-	const confirmed = confirm(`Delete "${title}"?\n\nThis will remove:\n- Transcript file\n- Translation file\n- Vocabulary\n- Progress\n- Learned status\n\nThis cannot be undone!`);
-
-	if (!confirmed) return;
-
-	try {
-		const response = await fetch(`/api/transcript?v=${currentVideoId}`, {
-			method: 'DELETE'
-		});
-
-		if (!response.ok) {
-			const error = await response.json();
-			throw new Error(error.error || 'Failed to delete');
-		}
-
-		const result = await response.json();
-		console.log('Deleted:', result.deleted);
-
-		// Reset state
-		currentVideoId = null;
-		transcriptData = [];
-		translationData = [];
-		hasTranslation = false;
-		activeIndex = -1;
-		vocabData = {};
-
-		// Update UI
-		document.getElementById('videoTitle').textContent = 'YouTube Video with Transcript';
-		document.getElementById('transcript').innerHTML = '<div class="loading">Select a transcript to start</div>';
-		setStatus('Transcript deleted');
-
-		// Reload transcript list
-		await loadAvailableTranscripts();
-
-	} catch (error) {
-		console.error('Delete error:', error);
-		alert(`Failed to delete: ${error.message}`);
-	}
 }
 
 // --- Data Fetching ---
@@ -508,7 +519,7 @@ async function loadAvailableTranscripts() {
 				.map((t) => {
 					const shortTitle = t.title || t.videoId;
 					const fullTitle = t.fullTitle || shortTitle;
-					return `<span class="transcript-tag" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
+					return `<span class="transcript-tag" id="tag-${t.videoId}" draggable="true" data-videoid="${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
 				})
 				.join("");
 		}
@@ -520,10 +531,13 @@ async function loadAvailableTranscripts() {
 				.map((t) => {
 					const shortTitle = t.title || t.videoId;
 					const fullTitle = t.fullTitle || shortTitle;
-					return `<span class="transcript-tag learned" id="tag-${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
+					return `<span class="transcript-tag learned" id="tag-${t.videoId}" draggable="true" data-videoid="${t.videoId}" onclick="loadByVideoId('${t.videoId}')" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" onclick="event.stopPropagation(); copyVideoId('${t.videoId}')" title="Copy ID">content_copy</span></span>`;
 				})
 				.join("");
 		}
+
+		// Setup drag and drop
+		setupDragAndDrop();
 
 		const content = document.getElementById("learnedTags");
 		const icon = document.getElementById("learnedToggleIcon");
@@ -600,8 +614,6 @@ function loadByVideoId(videoId) {
 	});
 	const activeTag = document.getElementById(`tag-${videoId}`);
 	if (activeTag) activeTag.classList.add("active");
-	updateLearnedButtonState();
-	updateDeleteButtonState();
 	loadVideo(videoId);
 }
 
@@ -689,8 +701,6 @@ window.onload = async function() {
 	if (lastVideoId) {
 		loadByVideoId(lastVideoId);
 	}
-
-	updateDeleteButtonState();
 };
 
 // --- Save progress on page unload ---
@@ -713,10 +723,6 @@ document.addEventListener("keydown", function (e) {
 		e.preventDefault();
 		rewindForward();
 	}
-	if (e.code === "KeyS" && !e.ctrlKey && !e.metaKey) {
-		e.preventDefault();
-		syncVideo();
-	}
 	if (e.code === "KeyD" && !e.ctrlKey && !e.metaKey) {
 		e.preventDefault();
 		toggleDual();
@@ -727,10 +733,6 @@ document.addEventListener("keydown", function (e) {
 	}
 	if (e.code === "KeyL" && !e.ctrlKey && !e.metaKey) {
 		e.preventDefault();
-		toggleLearned();
-	}
-	if (e.code === "Backspace" && !e.ctrlKey && !e.metaKey && currentVideoId) {
-		e.preventDefault();
-		deleteTranscript();
+		toggleLearned(currentVideoId);
 	}
 });

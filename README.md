@@ -23,8 +23,10 @@ Open http://localhost:7070
 
 - Watch YouTube videos with synchronized transcripts
 - Toggle dual-language view (original + English translation)
+- Drag and drop transcripts between Available and Learned panels
 - Keyboard shortcuts for playback control
 - Hover transcript to see vocabulary translation
+- Auto-synchronized transcript scrolling
 
 ## Setup
 
@@ -40,10 +42,10 @@ Open http://localhost:7070
 |-----|--------|
 | `Space` | Pause/Play |
 | `←` | Rewind 10s |
-| `S` | Sync video to transcript |
+| `→` | Forward 10s |
 | `D` | Toggle dual translation |
 | `F` | Toggle fullscreen mode |
-| `L` | Mark video as learned |
+| `L` | Toggle learned status (resets progress) |
 
 ## Adding Transcripts
 
@@ -128,10 +130,18 @@ Validates and cleans up:
 - Empty translations  
 - Vocabulary cleanup
 
-### Delete Transcript
-**Command:** `"delete VIDEO_ID"` or `"remove VIDEO_ID"`
+### Manage Learned Videos
 
-Removes a transcript and all associated files (translation, vocab, progress, learned status).
+Drag and drop transcript tags between panels:
+- **Available transcripts** → **Learned transcripts**: Mark as learned (resets progress)
+- **Learned transcripts** → **Available transcripts**: Unmark as learned (resets progress)
+
+Or use the `L` keyboard shortcut to toggle the current video.
+
+### Delete Transcript
+**Command:** `"delete VIDEO_ID"` or `"remove VIDEO_ID"` (AI only)
+
+Removes a transcript and all associated files (translation, vocab, progress, learned status). This operation is only available through AI commands, not via the web interface.
 
 ## Workflow
 

@@ -17,80 +17,6 @@ const LEARNED_PATH = path.join(ROOT_DIR, 'data', 'learned.json');
 const PROGRESS_PATH = path.join(ROOT_DIR, 'data', 'progress.json');
 
 /**
- * DELETE /api/transcript?v=VIDEO_ID
- *
- * Delete a transcript and all associated files (translation, vocab, progress).
- *
- * @param {URL} url
- * @param {import('http').ServerResponse} res
- */
-function handleDeleteTranscript(url, res) {
-    const videoId = url.searchParams.get('v');
-    if (!videoId) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Video ID required' }));
-        return;
-    }
-
-    try {
-        const deleted = [];
-
-        // Find and delete transcript files
-        const files = fs.existsSync(TRANSCRIPTS_DIR) ? fs.readdirSync(TRANSCRIPTS_DIR) : [];
-        files.forEach(file => {
-            // Skip non-markdown files and vocab files
-            if (!file.endsWith('.md') || file.includes('_vocab.json')) return;
-            
-            const filePath = path.join(TRANSCRIPTS_DIR, file);
-            const content = fs.readFileSync(filePath, 'utf-8');
-            const fileVideoId = getVideoIdFromFile(content) || file;
-            
-            if (fileVideoId === videoId) {
-                fs.unlinkSync(filePath);
-                deleted.push(file);
-            }
-        });
-
-        // Delete vocab file
-        const vocabPath = path.join(VOCAB_DIR, `${videoId}_vocab.json`);
-        if (fs.existsSync(vocabPath)) {
-            fs.unlinkSync(vocabPath);
-            deleted.push(`${videoId}_vocab.json`);
-        }
-
-        // Delete progress for this video
-        if (fs.existsSync(PROGRESS_PATH)) {
-            const progressData = fs.readFileSync(PROGRESS_PATH, 'utf-8');
-            const progress = JSON.parse(progressData);
-            if (progress[videoId]) {
-                delete progress[videoId];
-                fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2));
-                deleted.push('progress');
-            }
-        }
-
-        // Delete from learned videos
-        if (fs.existsSync(LEARNED_PATH)) {
-            const learnedData = fs.readFileSync(LEARNED_PATH, 'utf-8');
-            const learned = JSON.parse(learnedData);
-            const index = learned.learnedVideos.indexOf(videoId);
-            if (index > -1) {
-                learned.learnedVideos.splice(index, 1);
-                fs.writeFileSync(LEARNED_PATH, JSON.stringify(learned, null, 2));
-                deleted.push('learned');
-            }
-        }
-
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, deleted }));
-    } catch (e) {
-        console.error('Delete error:', e);
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: e.message }));
-    }
-}
-
-/**
  * GET /api/translation?v=VIDEO_ID
  *
  * Returns the English translation as YouTube-flavoured XML, or 404.
@@ -406,11 +332,6 @@ function setupRoutes(req, res) {
 
     if (url.pathname === '/api/translation') {
         handleTranslation(url, res);
-        return;
-    }
-
-    if (url.pathname === '/api/transcript' && req.method === 'DELETE') {
-        handleDeleteTranscript(url, res);
         return;
     }
 

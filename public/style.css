@@ -437,6 +437,35 @@ button.danger:hover {
 	opacity: 0.8;
 }
 
+/* Drag and Drop */
+.transcript-tag[draggable="true"] {
+	cursor: grab;
+}
+
+.transcript-tag[draggable="true"]:active {
+	cursor: grabbing;
+}
+
+.transcript-tag.dragging {
+	opacity: 0.5;
+	transform: scale(0.95);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#transcriptTags,
+#learnedTags {
+	min-height: 2rem;
+	transition: background-color 0.2s, border-color 0.2s;
+}
+
+#transcriptTags.drag-over,
+#learnedTags.drag-over {
+	background-color: var(--bg-hover);
+	border-radius: var(--radius-xs);
+	outline: 2px dashed var(--brand);
+	outline-offset: 4px;
+}
+
 .collapsible-header {
 	cursor: pointer;
 	display: flex;

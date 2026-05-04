@@ -101,62 +101,6 @@ function convertToXML(transcriptData) {
 }
 
 /**
- * List all original transcript files (excludes _translation.md).
- *
- * @returns {string[]}
- */
-function findTranscriptFiles() {
-    if (!fs.existsSync(TRANSCRIPTS_DIR)) return [];
-    return fs.readdirSync(TRANSCRIPTS_DIR).filter(f => {
-        const ext = path.extname(f).toLowerCase();
-        return (ext === '.md' || ext === '.txt') && !f.includes('_translation');
-    });
-}
-
-/**
- * List translation files found in the transcripts folder.
- *
- * @returns {string[]}
- */
-function findTranslationFiles() {
-    if (!fs.existsSync(TRANSCRIPTS_DIR)) return [];
-    return fs.readdirSync(TRANSCRIPTS_DIR).filter(f => f.includes('_translation.md'));
-}
-
-/**
- * List all vocabulary JSON files.
- *
- * @returns {string[]}
- */
-function findVocabFiles() {
-    if (!fs.existsSync(VOCAB_DIR)) return [];
-    return fs.readdirSync(VOCAB_DIR).filter(f => f.endsWith('_vocab.json'));
-}
-
-/**
- * Read the raw content of a transcript file.
- *
- * @param {string} filename
- * @returns {string | null}
- */
-function readTranscript(filename) {
-    const filepath = path.join(TRANSCRIPTS_DIR, filename);
-    if (!fs.existsSync(filepath)) return null;
-    return fs.readFileSync(filepath, 'utf-8');
-}
-
-/**
- * Write (or overwrite) a transcript file.
- *
- * @param {string} filename
- * @param {string} content
- */
-function writeTranscript(filename, content) {
-    const filepath = path.join(TRANSCRIPTS_DIR, filename);
-    fs.writeFileSync(filepath, content);
-}
-
-/**
  * Find and parse a transcript (original or translation) for a given video ID.
  *
  * Searches by either the filename prefix or the `source:` URL inside the file.
@@ -197,30 +141,10 @@ function readVocab(videoId) {
     return JSON.parse(fs.readFileSync(vocabPath, 'utf-8'));
 }
 
-/**
- * Write (or overwrite) a vocabulary JSON file.
- *
- * @param {string} videoId
- * @param {Object.<string, string>} vocab
- */
-function writeVocab(videoId, vocab) {
-    const vocabPath = path.join(VOCAB_DIR, `${videoId}_vocab.json`);
-    if (!fs.existsSync(VOCAB_DIR)) {
-        fs.mkdirSync(VOCAB_DIR, { recursive: true });
-    }
-    fs.writeFileSync(vocabPath, JSON.stringify(vocab, null, 2));
-}
-
 module.exports = {
     parseTranscriptFile,
     getVideoIdFromFile,
     convertToXML,
-    findTranscriptFiles,
-    findTranslationFiles,
-    findVocabFiles,
-    readTranscript,
-    writeTranscript,
     getTranscriptForVideo,
     readVocab,
-    writeVocab,
 };

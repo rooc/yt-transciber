@@ -3,11 +3,10 @@
 ## Features
 
 ## Improvements
-- [ ] Add drag and drop functionality between Available transcripts and Learned Transcripts
 - [ ] Add dark/light theme toggle
-- [ ] Add new video trough UI and download transcript using yt-dlp
 
 ## Completed
+- [x ] Add drag and drop functionality between Available transcripts and Learned Transcripts
 - [x] Add delete transcript button with confirmation
 - [x] Add progress persistence (remember where you left off per video)
 - [x] Restructure project into organized folders
