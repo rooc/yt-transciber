@@ -1,5 +1,5 @@
 /**
- * Translate command — cleans transcripts and generates missing artefacts.
+ * Translate command — cleans transcripts and generates vocab with AI.
  *
  * Run with:
  *   node server.js translate
@@ -7,25 +7,25 @@
  * Performs three steps for every original transcript:
  *   1. Clean markdown (strip headings, section dividers, blank lines)
  *   2. Create missing `_translation.md` placeholder files (if missing)
- *   3. Create/update `_vocab.json` files with rough machine translations
+ *   3. Create/update `_vocab.json` files with AI translations (Qwen3.5 Plus)
  *
- * NOTE: This command does NOT create high-quality sentence translations.
- * For that, see AI_TRANSLATION_GUIDE.md.
+ * Use --free flag for translate-shell instead of AI:
+ *   node server.js translate --free
  */
 const path = require('path');
 const fs = require('fs');
-const { execSync } = require('child_process');
+const { execSync, spawn } = require('child_process');
 const { TRANSCRIPTS_DIR, VOCAB_DIR } = require('../config');
 const { findTranscriptFiles, readTranscript, writeTranscript, writeVocab } = require('../store');
 const { loadExcludedWords } = require('../exclusions');
 
 /**
- * Batch translate words using translate-shell.
+ * Batch translate words using translate-shell (free option).
  *
  * @param {string[]} words
  * @returns {string[]}
  */
-function batchTranslate(words) {
+function batchTranslateShell(words) {
     try {
         const output = execSync('trans -b es:en -no-auto', {
             input: words.join('\n'),
@@ -40,10 +40,95 @@ function batchTranslate(words) {
 }
 
 /**
+ * Call Qwen3.5 Plus via opencode CLI for AI translation.
+ *
+ * @param {string[]} words
+ * @returns {Promise<Object.<string, { translation: string, pos: string }>>}
+ */
+async function batchTranslateAI(words) {
+    return new Promise((resolve, reject) => {
+        const prompt = `Translate these Spanish words to English. Respond ONLY with valid JSON.
+
+Format: {"word": {"translation": "english", "pos": "noun"}}
+
+Words: ${words.join(', ')}
+
+Example: {"gato": {"translation": "cat", "pos": "noun"}}`;
+
+        const opencode = spawn('opencode', [
+            'run',
+            '--model', 'opencode-go/qwen3.5-plus',
+            '--format', 'json',
+            '--'
+        ], {
+            stdio: ['pipe', 'pipe', 'pipe']
+        });
+
+        let output = '';
+
+        opencode.stdout.on('data', (data) => {
+            const lines = data.toString().split('\n');
+            lines.forEach(line => {
+                if (line.trim()) {
+                    try {
+                        const event = JSON.parse(line);
+                        if (event.type === 'text' && event.part?.text) {
+                            output += event.part.text;
+                        }
+                    } catch (e) {
+                        // Ignore non-JSON lines
+                    }
+                }
+            });
+        });
+
+        opencode.stderr.on('data', (data) => {
+            process.stderr.write(data);
+        });
+
+        opencode.on('close', (code) => {
+            try {
+                const jsonMatch = output.match(/\{[\s\S]*\}/);
+                const jsonStr = jsonMatch ? jsonMatch[0] : output;
+                const result = JSON.parse(jsonStr);
+                resolve(result);
+            } catch (e) {
+                console.error('\n     AI parse error:', e.message);
+                // Fallback: return words as translation needed
+                const fallback = {};
+                words.forEach(w => fallback[w] = { translation: '[translation needed]', pos: null });
+                resolve(fallback);
+            }
+        });
+
+        opencode.on('error', (e) => {
+            console.error('\n     AI error:', e.message);
+            const fallback = {};
+            words.forEach(w => fallback[w] = { translation: '[translation needed]', pos: null });
+            resolve(fallback);
+        });
+
+        opencode.stdin.write(prompt);
+        opencode.stdin.end();
+
+        // Timeout after 3 minutes
+        setTimeout(() => {
+            opencode.kill('SIGTERM');
+            const fallback = {};
+            words.forEach(w => fallback[w] = { translation: '[translation needed]', pos: null });
+            resolve(fallback);
+        }, 180000);
+    });
+}
+
+/**
  * Execute the translate pipeline and print a report to stdout.
  */
-function runTranslate() {
+async function runTranslate() {
+    const useFreeShell = process.argv.includes('--free');
+
     console.log('\n=== TRANSLATE: Processing transcripts ===\n');
+    console.log(`Mode: ${useFreeShell ? 'Free (translate-shell)' : 'AI (Qwen3.5 Plus)'}\n`);
 
     /** @type {string[]} */
     const cleanedFiles = [];
@@ -56,9 +141,9 @@ function runTranslate() {
 
     const transcriptFiles = findTranscriptFiles();
 
-    transcriptFiles.forEach(filename => {
+    for (const filename of transcriptFiles) {
         let content = readTranscript(filename);
-        if (!content) return;
+        if (!content) continue;
 
         // --- Step 1: Clean the file ---
         const originalContent = content;
@@ -106,13 +191,13 @@ function runTranslate() {
         const sourceMatch = content.match(/source:\s*"([^"]+)"/);
         if (!sourceMatch) {
             console.log(`  ⚠️  ${filename}: No source URL found, skipping`);
-            return;
+            continue;
         }
 
         const videoIdMatch = sourceMatch[1].match(/v=([a-zA-Z0-9_-]{11})/);
         if (!videoIdMatch) {
             console.log(`  ⚠️  ${filename}: Could not extract video ID, skipping`);
-            return;
+            continue;
         }
 
         const videoId = videoIdMatch[1];
@@ -156,7 +241,7 @@ source: "${sourceMatch[1]}"
         const vocabPath = path.join(VOCAB_DIR, `${videoId}_vocab.json`);
         const excludedWords = loadExcludedWords();
 
-        /** @type {Object.<string, string>} */
+        /** @type {Object.<string, any>} */
         let vocab = {};
         let isNewFile = false;
 
@@ -182,32 +267,64 @@ source: "${sourceMatch[1]}"
         });
 
         // Find all untranslated words (both new and existing)
-        const untranslated = Object.keys(vocab).filter(w => vocab[w] === '[translation needed]');
+        const untranslated = Object.keys(vocab).filter(w => {
+            const entry = vocab[w];
+            return typeof entry === 'string' || !entry?.translation;
+        });
 
         if (untranslated.length > 0) {
-            console.log(`  📚 ${filename}: translating ${untranslated.length} words...`);
+            console.log(`  📚 ${filename}: translating ${untranslated.length} words with ${useFreeShell ? 'translate-shell' : 'AI'}...`);
 
-            // Batch in groups of 50
-            const batchSize = 50;
-            let translatedCount = 0;
+            if (useFreeShell) {
+                // === Free translate-shell mode ===
+                const batchSize = 50;
+                let translatedCount = 0;
 
-            for (let i = 0; i < untranslated.length; i += batchSize) {
-                const batch = untranslated.slice(i, i + batchSize);
-                const translations = batchTranslate(batch);
+                for (let i = 0; i < untranslated.length; i += batchSize) {
+                    const batch = untranslated.slice(i, i + batchSize);
+                    const translations = batchTranslateShell(batch);
 
-                batch.forEach((word, idx) => {
-                    const t = translations[idx]?.trim().toLowerCase() || '[translation needed]';
-                    if (t && t !== '') {
-                        vocab[word] = t;
-                        translatedCount++;
-                    }
-                });
+                    batch.forEach((word, idx) => {
+                        const t = translations[idx]?.trim().toLowerCase() || '[translation needed]';
+                        if (t && t !== '') {
+                            vocab[word] = t;
+                            translatedCount++;
+                        }
+                    });
 
-                process.stdout.write(`\r     Progress: ${Math.min(i + batchSize, untranslated.length)}/${untranslated.length}`);
+                    process.stdout.write(`\r     Progress: ${Math.min(i + batchSize, untranslated.length)}/${untranslated.length}`);
+                }
+
+                console.log('');
+                console.log(`     Done: ${translatedCount}/${untranslated.length} translated`);
+            } else {
+                // === AI mode ===
+                const batchSize = 100;
+                let translatedCount = 0;
+
+                for (let i = 0; i < untranslated.length; i += batchSize) {
+                    const batch = untranslated.slice(i, i + batchSize);
+                    console.log(`     Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(untranslated.length / batchSize)}...`);
+
+                    const translations = await batchTranslateAI(batch);
+
+                    Object.entries(translations).forEach(([word, data]) => {
+                        if (data && data.translation) {
+                            vocab[word] = {
+                                translation: data.translation.toLowerCase(),
+                                pos: data.pos || null
+                            };
+                            translatedCount++;
+                        }
+                    });
+
+                    console.log(`     ✓ Batch complete: ${Object.keys(translations).length} words translated`);
+                }
+
+                console.log(`     Done: ${translatedCount}/${untranslated.length} translated`);
             }
-
-            console.log('');
-            console.log(`     Done: ${translatedCount}/${untranslated.length} translated`);
+        } else {
+            console.log(`  ✅ ${filename}: all words already translated`);
         }
 
         // Sort and save
@@ -223,7 +340,7 @@ source: "${sourceMatch[1]}"
         } else if (newWords.length > 0 || untranslated.length > 0) {
             vocabUpdated.push(`${videoId}_vocab.json`);
         }
-    });
+    }
 
     // --- Report ---
     console.log('\n=== TRANSLATE REPORT ===\n');
@@ -260,6 +377,7 @@ source: "${sourceMatch[1]}"
         console.log('✅ All vocabulary files up to date');
     }
 
+    console.log(`\n💰 Cost: ${useFreeShell ? 'Free' : '$0 (covered by opencode-go subscription)'}`);
     console.log('\n=== TRANSLATE COMPLETE ===\n');
 }
 
