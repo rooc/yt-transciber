@@ -19,14 +19,27 @@ node server.js translate
 - `*_vocab.json` with `[translation needed]`
 - `VOCAB_AI_PROMPT.md` (AI prompt)
 
-### 3. Get AI Translations
-1. Open `VOCAB_AI_PROMPT.md`
-2. Copy entire content
-3. Paste to AI:
-   - **ChatGPT:** https://chat.openai.com
-   - **Claude:** https://claude.ai
-   - **Qwen3.5 Plus:** `opencode run --model "opencode-go/qwen3.5-plus"`
-4. Save AI's JSON response as: `ai-response.json`
+### 3. Get AI Translations (EASY!)
+
+**Option A: Upload file to AI (Recommended)**
+
+**ChatGPT:**
+1. Click 📎 attachment icon
+2. Upload `VOCAB_AI_PROMPT.md`
+3. Say: "Read this file and do what it says"
+4. Copy JSON response → Save as `ai-response.json`
+
+**Claude:**
+1. Drag & drop `VOCAB_AI_PROMPT.md`
+2. Say: "Follow the instructions in this file"
+3. Copy JSON response → Save as `ai-response.json`
+
+**Option B: opencode-go users**
+```bash
+opencode run --model "opencode-go/qwen3.5-plus"
+# Upload or paste VOCAB_AI_PROMPT.md content
+# Save JSON response as: ai-response.json
+```
 
 ### 4. Apply Translations
 ```bash

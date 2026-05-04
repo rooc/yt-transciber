@@ -16,12 +16,17 @@ node server.js translate
 # → Creates vocab with [translation needed]
 # → Generates VOCAB_AI_PROMPT.md
 
-# 4. Get AI translations
-# Copy VOCAB_AI_PROMPT.md to AI (ChatGPT, Claude, Qwen3.5 Plus)
+# 4. Get AI translations (EASY WAY)
+# Upload VOCAB_AI_PROMPT.md to AI:
+# - ChatGPT: Click 📎 → Upload file → "Do what it says"
+# - Claude: Drag & drop file → "Follow instructions"
+# - Qwen3.5 Plus: opencode run --model "opencode-go/qwen3.5-plus"
 # Save JSON response as: ai-response.json
+
+# 5. Apply translations
 node server.js vocab-ai-apply ai-response.json
 
-# 5. Watch!
+# 6. Watch!
 node server.js
 ```
 

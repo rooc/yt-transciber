@@ -13,10 +13,10 @@ This project uses **AI for vocabulary translations**. Works with any AI service!
 node server.js translate
 # → Creates VOCAB_AI_PROMPT.md
 
-# 3. Copy VOCAB_AI_PROMPT.md to your AI
-# - ChatGPT: https://chat.openai.com (free)
-# - Claude: https://claude.ai (free)
-# - Gemini: https://gemini.google.com (free)
+# 3. Upload VOCAB_AI_PROMPT.md to your AI
+# - ChatGPT: Click 📎 → Upload file → "Do what it says"
+# - Claude: Drag & drop → "Follow instructions"
+# - Gemini: Upload file → "Do what it says"
 
 # 4. Save AI's JSON response as: ai-response.json
 
@@ -32,64 +32,22 @@ node server.js
 
 ---
 
-## AI Prompt Example
+## Upload vs Copy/Paste
 
-The `VOCAB_AI_PROMPT.md` file looks like this:
+**Don't copy/paste!** Just upload the file:
 
-```
-# AI Vocabulary Translation
+| AI Service | How to Upload |
+|------------|---------------|
+| **ChatGPT** | Click 📎 icon → Select `VOCAB_AI_PROMPT.md` |
+| **Claude** | Drag & drop file into chat |
+| **Gemini** | Click 📎 → Upload file |
 
-Translate these 250 Spanish words to English.
+**What to say:**
+- "Read this file and do what it says"
+- "Follow the instructions in this file"
+- "Translate these words as instructed"
 
-## Format
-Respond ONLY with valid JSON.
-
-## JSON Structure
-{
-  "gato": { "translation": "cat", "pos": "noun" },
-  "correr": { "translation": "to run", "pos": "verb" }
-}
-
-## Words to Translate
-gato, perro, casa, correr, ...
-```
-
----
-
-## AI Response Example
-
-Save this as `ai-response.json`:
-
-```json
-{
-  "gato": { "translation": "cat", "pos": "noun" },
-  "perro": { "translation": "dog", "pos": "noun" },
-  "casa": { "translation": "house", "pos": "noun" },
-  "correr": { "translation": "to run", "pos": "verb" }
-}
-```
-
----
-
-## Using Free AI Tiers
-
-### ChatGPT Free
-1. Go to https://chat.openai.com
-2. Paste `VOCAB_AI_PROMPT.md` content
-3. Copy JSON response
-4. Save as `ai-response.json`
-
-### Claude Free
-1. Go to https://claude.ai
-2. Paste prompt
-3. Copy JSON response
-4. Save as `ai-response.json`
-
-### Gemini Free
-1. Go to https://gemini.google.com
-2. Paste prompt
-3. Copy JSON response
-4. Save as `ai-response.json`
+AI will read the file and respond with JSON automatically!
 
 ---
 
