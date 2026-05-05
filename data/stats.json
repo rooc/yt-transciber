@@ -1,0 +1,32 @@
+{
+  "totalLearned": 3,
+  "totalWatchTimeSeconds": 2847.5,
+  "totalWatchTimeHours": 0.79,
+  "deletedVideosTimeSeconds": 0,
+  "history": [
+    {
+      "videoId": "O9JmoRFlD24",
+      "title": "Why Age? Should We End Aging Forever?",
+      "watchedTimeSeconds": 455.041,
+      "watchedTimeHours": 0.13,
+      "learnedDate": "2026-05-04",
+      "deleted": false
+    },
+    {
+      "videoId": "zE_byQr9V8E",
+      "title": "Cozy Game for Learning SPANISH!",
+      "watchedTimeSeconds": 743.401,
+      "watchedTimeHours": 0.21,
+      "learnedDate": "2026-05-04",
+      "deleted": false
+    },
+    {
+      "videoId": "7offZ0CIEIM",
+      "title": "Cozy Game for Learning SPANISH!",
+      "watchedTimeSeconds": 592.801,
+      "watchedTimeHours": 0.16,
+      "learnedDate": "2026-05-04",
+      "deleted": false
+    }
+  ]
+}

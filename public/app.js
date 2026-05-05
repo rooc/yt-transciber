@@ -72,6 +72,35 @@ async function saveLearnedVideos() {
 	}
 }
 
+// --- Stats (server) ---
+
+async function loadStats() {
+	try {
+		const response = await fetch("/api/stats");
+		if (response.ok) {
+			const data = await response.json();
+			displayStats(data);
+			console.log("Loaded stats from server:", data);
+		}
+	} catch (e) {
+		console.log("Could not load stats from server");
+	}
+}
+
+function displayStats(stats) {
+	const learnedEl = document.getElementById("statsLearned");
+	const timeEl = document.getElementById("statsTime");
+	
+	if (learnedEl) {
+		learnedEl.textContent = `${stats.totalLearned || 0} video${stats.totalLearned !== 1 ? 's' : ''} learned`;
+	}
+	
+	if (timeEl) {
+		const hours = (stats.totalWatchTimeHours || 0).toFixed(1);
+		timeEl.textContent = `${hours}h watched`;
+	}
+}
+
 // --- Video Progress (server + localStorage) ---
 
 async function loadVideoProgress() {
@@ -836,6 +865,7 @@ window.onload = async function() {
 	await loadLearnedVideos();
 	await loadVideoProgress();
 	await loadAvailableTranscripts();
+	await loadStats();
 
 	const lastVideoId = getLastWatchedVideo();
 	if (lastVideoId) {

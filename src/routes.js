@@ -8,7 +8,7 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const { PORT, ROOT_DIR, TRANSCRIPTS_DIR, VOCAB_DIR } = require('./config');
+const { PORT, ROOT_DIR, TRANSCRIPTS_DIR, VOCAB_DIR, STATS_PATH } = require('./config');
 const { parseTranscriptFile, getVideoIdFromFile, convertToXML } = require('./store');
 const { getTranscriptForVideo, readVocab, readGrammar } = require('./store');
 
@@ -152,6 +152,33 @@ function handleGrammar(url, res) {
     } else {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify([]));
+    }
+}
+
+/**
+ * GET /api/stats
+ *
+ * Returns overall learning statistics: total learned videos and watch time in hours.
+ *
+ * @param {import('http').ServerResponse} res
+ */
+function handleStats(res) {
+    try {
+        if (fs.existsSync(STATS_PATH)) {
+            const data = fs.readFileSync(STATS_PATH, 'utf-8');
+            const stats = JSON.parse(data);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({
+                totalLearned: stats.totalLearned || 0,
+                totalWatchTimeHours: stats.totalWatchTimeHours || 0
+            }));
+        } else {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ totalLearned: 0, totalWatchTimeHours: 0 }));
+        }
+    } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: e.message }));
     }
 }
 
@@ -373,6 +400,11 @@ function setupRoutes(req, res) {
 
     if (url.pathname === '/api/grammar') {
         handleGrammar(url, res);
+        return;
+    }
+
+    if (url.pathname === '/api/stats') {
+        handleStats(res);
         return;
     }
 

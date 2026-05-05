@@ -421,6 +421,29 @@ button.danger:hover {
 	color: var(--text-muted);
 }
 
+.stats-line {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	font-size: 0.85rem;
+	color: var(--text-subtle);
+	background: var(--bg-elevated);
+	border-radius: var(--radius-sm);
+	margin-top: 0.5rem;
+}
+
+.stats-line .material-icons {
+	font-size: 1rem;
+	color: var(--text-accent);
+}
+
+.stats-separator {
+	color: var(--border-light);
+	margin: 0 0.25rem;
+}
+
 .icon-sm {
 	font-size: 1rem !important;
 	vertical-align: middle;
@@ -469,9 +492,6 @@ button.danger:hover {
 }
 
 /* Grammar Panel Styles */
-#grammarPanel {
-	margin-top: 0.5rem;
-}
 
 #grammarSentences {
 	padding: 0.5rem 0;
