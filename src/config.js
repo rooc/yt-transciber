@@ -4,9 +4,9 @@
  * Defines filesystem paths and runtime constants so every other module
  * reads from a single source of truth.
  */
-const path = require('path');
+const path = require("path");
 
-const ROOT_DIR = path.join(__dirname, '..');
+const ROOT_DIR = path.join(__dirname, "..");
 
 /**
  * @typedef {Object} AppConfig
@@ -20,12 +20,12 @@ const ROOT_DIR = path.join(__dirname, '..');
 
 /** @type {AppConfig} */
 module.exports = {
-    PORT: 7070,
-    ROOT_DIR,
-    TRANSCRIPTS_DIR: path.join(ROOT_DIR, 'transcripts'),
-    VOCAB_DIR: path.join(ROOT_DIR, 'vocab'),
-    GRAMMAR_DIR: path.join(ROOT_DIR, 'grammar'),
-    SUMMARY_DIR: path.join(ROOT_DIR, 'summary'),
-    DATA_DIR: path.join(ROOT_DIR, 'data'),
-    STATS_PATH: path.join(ROOT_DIR, 'data', 'stats.json'),
+	PORT: 9090,
+	ROOT_DIR,
+	TRANSCRIPTS_DIR: path.join(ROOT_DIR, "transcripts"),
+	VOCAB_DIR: path.join(ROOT_DIR, "vocab"),
+	GRAMMAR_DIR: path.join(ROOT_DIR, "grammar"),
+	SUMMARY_DIR: path.join(ROOT_DIR, "summary"),
+	DATA_DIR: path.join(ROOT_DIR, "data"),
+	STATS_PATH: path.join(ROOT_DIR, "data", "stats.json"),
 };
