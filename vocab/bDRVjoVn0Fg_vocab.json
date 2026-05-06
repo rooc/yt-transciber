@@ -1,372 +1,432 @@
 {
-  "billones de": {
-    "translation": "billions of",
-    "pos": "expression",
-    "context": "40 billones de células"
-  },
-  "bichos": {
-    "translation": "bugs/microbes",
-    "pos": "noun",
-    "context": "Para tus bichos"
-  },
-  "ecosistema": {
-    "translation": "ecosystem",
-    "pos": "noun",
-    "context": "ecosistema rico en recursos"
-  },
-  "huéspedes": {
-    "translation": "guests/hosts",
-    "pos": "noun",
-    "context": "Algunos de estos huéspedes son bienvenidos"
-  },
   "sistema inmunitario": {
     "translation": "immune system",
     "pos": "noun phrase",
-    "context": "El sistema inmunitario es el guardián"
+    "context": "El sistema inmunitario es el guardián de este planeta"
   },
-  "guardián": {
-    "translation": "guardian",
-    "pos": "noun",
-    "context": "El guardián de este planeta"
+  "billones de": {
+    "translation": "billions of",
+    "pos": "quantifier phrase",
+    "context": "compuesto por unos 40 billones de células"
   },
-  "riesgo de": {
-    "translation": "risk of",
-    "pos": "noun phrase",
-    "context": "riesgo de invasión constante"
-  },
-  "desgraciadamente": {
-    "translation": "unfortunately",
-    "pos": "adverb",
-    "context": "Desgraciadamente, los enemigos tienen ventaja"
-  },
-  "diminuto": {
-    "translation": "tiny/minute",
-    "pos": "adjective",
-    "context": "el mundo diminuto"
-  },
-  "tener ventaja": {
-    "translation": "to have an advantage",
-    "pos": "expression",
-    "context": "tienen una enorme ventaja"
-  },
-  "complicado": {
-    "translation": "complicated",
-    "pos": "adjective",
-    "context": "después de un complicado baile"
-  },
-  "multiplicarse": {
-    "translation": "to multiply",
-    "pos": "verb",
-    "context": "se multiplican miriadas de veces"
-  },
-  "remotamente": {
-    "translation": "remotely",
-    "pos": "adverb",
-    "context": "remotamente útil"
-  },
-  "bacteria": {
-    "translation": "bacteria",
-    "pos": "noun",
-    "context": "Una bacteria se compone de una célula"
-  },
-  "convertirse en": {
-    "translation": "to turn into/become",
+  "formar una familia": {
+    "translation": "to start a family",
     "pos": "verb phrase",
-    "context": "puede convertirse en miles"
+    "context": "Un lugar perfecto donde mudarse y formar una familia"
+  },
+  "frente al": {
+    "translation": "against / facing",
+    "pos": "prepositional phrase",
+    "context": "encargado de protegernos frente al constante riesgo de invasión"
+  },
+  "de invasión": {
+    "translation": "of invasion",
+    "pos": "noun phrase",
+    "context": "protegernos frente al constante riesgo de invasión"
+  },
+  "copia de": {
+    "translation": "copy of",
+    "pos": "noun phrase",
+    "context": "el esfuerzo que lleva a ser una copia de una persona"
+  },
+  "complicado baile": {
+    "translation": "complicated dance",
+    "pos": "noun phrase",
+    "context": "dos células se unirán después de un complicado baile"
+  },
+  "mini copia": {
+    "translation": "mini copy",
+    "pos": "noun phrase",
+    "context": "será solo una mini copia que necesitará años"
+  },
+  "fabricar una copia": {
+    "translation": "to make a copy",
+    "pos": "verb phrase",
+    "context": "puede fabricar una copia totalmente desarrollada"
   },
   "ecosistemas hostiles": {
     "translation": "hostile ecosystems",
     "pos": "noun phrase",
-    "context": "ecosistemas hostiles"
+    "context": "nuestros cuerpos son ecosistemas hostiles"
   },
   "presión selectiva": {
     "translation": "selective pressure",
     "pos": "noun phrase",
-    "context": "aplican presión selectiva"
-  },
-  "se suceden": {
-    "translation": "follow one another/succeed",
-    "pos": "verb phrase",
-    "context": "sus generaciones se suceden"
+    "context": "ecosistemas hostiles que aplican presión selectiva"
   },
   "por pura suerte": {
     "translation": "by pure luck",
-    "pos": "expression",
-    "context": "por pura suerte"
+    "pos": "adverbial phrase",
+    "context": "por pura suerte termina por aparecer un individuo que muta"
   },
-  "manera adecuada": {
-    "translation": "appropriate way",
-    "pos": "noun phrase",
-    "context": "de la manera adecuada"
-  },
-  "resistir": {
-    "translation": "to resist",
-    "pos": "verb",
-    "context": "resistir nuestras defensas"
+  "de la manera adecuada": {
+    "translation": "in the right way",
+    "pos": "adverbial phrase",
+    "context": "se adapta justo de la manera adecuada para resistir"
   },
   "a toda velocidad": {
     "translation": "at full speed",
-    "pos": "expression",
-    "context": "multiplicarse a toda velocidad"
+    "pos": "adverbial phrase",
+    "context": "empieza a multiplicarse de nuevo a toda velocidad"
   },
   "variedad interminable": {
     "translation": "endless variety",
     "pos": "noun phrase",
-    "context": "total variedad interminable"
+    "context": "nos enfrentamos a una total variedad interminable de enemigos"
   },
-  "seguir el ritmo": {
-    "translation": "to keep up with",
-    "pos": "expression",
-    "context": "seguir su ritmo de evolución"
+  "seguir su ritmo": {
+    "translation": "to keep up with their pace",
+    "pos": "verb phrase",
+    "context": "somos incapaces de seguir su ritmo de evolución"
   },
   "lo más alucinante": {
-    "translation": "the most amazing",
-    "pos": "expression",
-    "context": "lo más alucinante que haya jamás"
+    "translation": "the most mind-blowing thing",
+    "pos": "superlative phrase",
+    "context": "nuestro sistema inmunitario puede que sea lo más alucinante que haya jamás"
   },
-  "justo después de": {
-    "translation": "right after",
-    "pos": "expression",
-    "context": "justo después del cerebro humano"
+  "sistema biológico": {
+    "translation": "biological system",
+    "pos": "noun phrase",
+    "context": "Es el sistema biológico más complicado que conocemos"
   },
   "ir por partes": {
     "translation": "to go step by step",
-    "pos": "expression",
-    "context": "debemos simplificar e ir por partes"
+    "pos": "verb phrase",
+    "context": "Dada su complejidad, hemos de simplificar e ir por partes"
   },
   "en pocas palabras": {
-    "translation": "in short/in few words",
-    "pos": "expression",
-    "context": "En pocas palabras"
+    "translation": "in short / in a few words",
+    "pos": "adverbial phrase",
+    "context": "En pocas palabras, disponemos de dos sistemas inmunitarios"
   },
-  "listo cuando": {
-    "translation": "ready when",
-    "pos": "expression",
-    "context": "ya está listo cuando nacemos"
+  "sistemas inmunitarios": {
+    "translation": "immune systems",
+    "pos": "noun phrase",
+    "context": "disponemos de dos sistemas inmunitarios"
   },
   "soldados no especializados": {
-    "translation": "unspecialized soldiers",
+    "translation": "non-specialized soldiers",
     "pos": "noun phrase",
-    "context": "soldados no especializados"
+    "context": "Se compone principalmente de soldados no especializados"
   },
   "superarmas": {
-    "translation": "super weapons",
+    "translation": "superweapons",
     "pos": "noun",
-    "context": "Nuestras superarmas"
+    "context": "Nuestras superarmas, increíblemente eficaces y mortales"
   },
-  "lentas de desplegar": {
-    "translation": "slow to deploy",
-    "pos": "adjective phrase",
-    "context": "lentas de desplegar"
-  },
-  "producen un impacto": {
-    "translation": "produce an impact",
-    "pos": "expression",
+  "producir un impacto": {
+    "translation": "to produce an impact",
+    "pos": "verb phrase",
     "context": "producen un enorme impacto"
   },
   "mayor biblioteca": {
-    "translation": "biggest library",
+    "translation": "largest library",
     "pos": "noun phrase",
-    "context": "la mayor biblioteca del universo"
+    "context": "incluye la mayor biblioteca del universo"
+  },
+  "respuesta para todo": {
+    "translation": "response for everything",
+    "pos": "noun phrase",
+    "context": "Tiene una respuesta para todo"
   },
   "peste negra": {
-    "translation": "Black Death",
+    "translation": "black plague",
     "pos": "noun phrase",
-    "context": "la peste negra"
+    "context": "al menos una de estas células superarmas para combatir la peste negra"
   },
-  "contrarrestar": {
-    "translation": "to counteract",
-    "pos": "verb",
-    "context": "permite contrarrestar la capacidad"
+  "contrarrestar la capacidad": {
+    "translation": "to counteract the ability",
+    "pos": "verb phrase",
+    "context": "Esto permite contrarrestar la capacidad que tienen bacterias"
   },
   "tomar perspectiva": {
     "translation": "to take perspective",
-    "pos": "expression",
-    "context": "debemos tomar perspectiva"
+    "pos": "verb phrase",
+    "context": "Para comprender lo que sucede debemos tomar perspectiva"
   },
-  "organismos terrestres": {
-    "translation": "terrestrial organisms",
+  "piezas básicas": {
+    "translation": "basic pieces",
     "pos": "noun phrase",
-    "context": "organismos terrestres"
+    "context": "están compuestos por las mismas piezas básicas"
   },
   "ladrillos de la vida": {
     "translation": "building blocks of life",
-    "pos": "expression",
-    "context": "los ladrillos de la vida"
+    "pos": "noun phrase",
+    "context": "Son los ladrillos de la vida"
   },
   "piezas de rompecabezas": {
     "translation": "puzzle pieces",
     "pos": "noun phrase",
-    "context": "piezas de rompecabezas 3D"
+    "context": "Imaginémoslas como piezas de rompecabezas 3D"
   },
   "idioma del micromundo": {
     "translation": "language of the microworld",
     "pos": "noun phrase",
-    "context": "el idioma del micromundo"
+    "context": "las proteínas son de cierto modo el idioma del micromundo"
   },
-  "distinguir amigos de enemigos": {
-    "translation": "to distinguish friends from enemies",
-    "pos": "expression",
-    "context": "distinguir amigos de enemigos"
-  },
-  "conectarse a": {
-    "translation": "to connect to",
+  "carecen de": {
+    "translation": "lack / are lacking",
     "pos": "verb phrase",
-    "context": "capaces de conectarse a"
+    "context": "Las células carecen de ojos u oídos"
+  },
+  "dispositivos diminutos": {
+    "translation": "tiny devices",
+    "pos": "noun phrase",
+    "context": "disponen de innumerables dispositivos diminutos denominados receptores"
   },
   "encajar con": {
-    "translation": "to fit/match with",
+    "translation": "to fit with / connect with",
     "pos": "verb phrase",
-    "context": "encajar con una proteína"
+    "context": "Cuando una célula encaja con una proteína"
   },
   "hacer esta distinción": {
     "translation": "to make this distinction",
-    "pos": "expression",
-    "context": "hacer esta distinción"
-  },
-  "son ineficaces frente a": {
-    "translation": "are ineffective against",
-    "pos": "expression",
-    "context": "son ineficaces frente a"
-  },
-  "listo para": {
-    "translation": "ready for",
-    "pos": "expression",
-    "context": "estar listo para cada posible enemigo"
-  },
-  "mezclan y acoplan": {
-    "translation": "mix and match",
     "pos": "verb phrase",
-    "context": "mezclan y acoplan su código genético"
+    "context": "las células son capaces de hacer esta distinción entre amigos y enemigos"
+  },
+  "cáscara cambia": {
+    "translation": "shell changes",
+    "pos": "noun phrase",
+    "context": "las proteínas que componen su cáscara cambian un poquitín constantemente"
+  },
+  "armas universales": {
+    "translation": "universal weapons",
+    "pos": "noun phrase",
+    "context": "lo que les convierte en armas universales"
+  },
+  "mezclar y acoplar": {
+    "translation": "to mix and match",
+    "pos": "verb phrase",
+    "context": "Las células del sistema inmunitario adquirido mezclan y acoplan su propio código genético"
   },
   "código genético": {
     "translation": "genetic code",
     "pos": "noun phrase",
-    "context": "su código genético"
+    "context": "mezclan y acoplan su propio código genético"
   },
   "asombrosa variedad": {
     "translation": "amazing variety",
     "pos": "noun phrase",
-    "context": "esta asombrosa variedad de receptores"
+    "context": "crean esta asombrosa variedad de receptores"
   },
   "permiso oficial": {
     "translation": "official permission",
     "pos": "noun phrase",
-    "context": "tienen permiso oficial"
+    "context": "tienen permiso oficial para tomar diminutas partes de su propio código genético"
   },
-  "mezclan aleatoriamente": {
-    "translation": "mix randomly",
+  "mezclarlas aleatoriamente": {
+    "translation": "to mix them randomly",
     "pos": "verb phrase",
-    "context": "mezclan aleatoriamente"
+    "context": "mezclarlas aleatoriamente y crear miles de millones de receptores diferentes"
   },
-  "aleatoriamente": {
-    "translation": "randomly",
-    "pos": "adverb",
-    "context": "mezclan aleatoriamente"
-  },
-  "ejército de cocineros": {
-    "translation": "army of chefs",
+  "receta especial": {
+    "translation": "special recipe",
     "pos": "noun phrase",
-    "context": "un ejército de cocineros"
+    "context": "Cada uno quiere su propia receta especial"
+  },
+  "plato principal": {
+    "translation": "main course",
+    "pos": "noun phrase",
+    "context": "como plato principal y malvavisco"
+  },
+  "diminuta variación": {
+    "translation": "tiny variation",
+    "pos": "noun phrase",
+    "context": "Con una diminuta variación y solo 100 ingredientes"
+  },
+  "merecer su propio": {
+    "translation": "to deserve its own",
+    "pos": "verb phrase",
+    "context": "Los detalles son tan fantásticos que merecerían su propio video"
+  },
+  "fragmentos de genes": {
+    "translation": "gene fragments",
+    "pos": "noun phrase",
+    "context": "con solo una pequeña selección de fragmentos de genes"
+  },
+  "receptor único": {
+    "translation": "unique receptor",
+    "pos": "noun phrase",
+    "context": "cada una con un receptor único y específico"
   },
   "nos topamos con": {
-    "translation": "we run into/encounter",
-    "pos": "expression",
-    "context": "nos topamos con un problema"
-  },
-  "peligroso para": {
-    "translation": "dangerous for",
-    "pos": "adjective phrase",
-    "context": "peligroso para la supervivencia"
-  },
-  "trabaja en exclusiva": {
-    "translation": "works exclusively",
-    "pos": "expression",
-    "context": "trabaja en exclusiva"
-  },
-  "universidad del homicidio": {
-    "translation": "university of murder",
-    "pos": "noun phrase",
-    "context": "la universidad del homicidio"
-  },
-  "alita de pollo": {
-    "translation": "chicken wing",
-    "pos": "noun phrase",
-    "context": "del tamaño de una alita de pollo"
-  },
-  "entra en declive": {
-    "translation": "goes into decline",
-    "pos": "expression",
-    "context": "entra en declive"
-  },
-  "tras la pubertad": {
-    "translation": "after puberty",
-    "pos": "expression",
-    "context": "tras la pubertad"
-  },
-  "curso intensivo": {
-    "translation": "intensive course",
-    "pos": "noun phrase",
-    "context": "un curso intensivo"
-  },
-  "ordena a suicidarse": {
-    "translation": "orders to commit suicide",
-    "pos": "expression",
-    "context": "ordena a suicidarse"
-  },
-  "se la comen": {
-    "translation": "eat it up",
-    "pos": "expression",
-    "context": "Después se la comen"
-  },
-  "tiquis miquis": {
-    "translation": "picky/fussy",
-    "pos": "expression",
-    "context": "Es tan tiquis miquis"
-  },
-  "solo se gradúa": {
-    "translation": "only graduates",
-    "pos": "expression",
-    "context": "solo se gradúa un 2%"
-  },
-  "pueden originarse": {
-    "translation": "can originate",
+    "translation": "we run into",
     "pos": "verb phrase",
-    "context": "pueden originarse enfermedades"
+    "context": "Aunque aquí nos topamos con un problema bastante peligroso"
+  },
+  "fabricar armas": {
+    "translation": "to manufacture weapons",
+    "pos": "verb phrase",
+    "context": "fabrica armas que pueden atacar a cada pieza proteica posible"
+  },
+  "pieza proteica": {
+    "translation": "protein piece",
+    "pos": "noun phrase",
+    "context": "atacar a cada pieza proteica posible del universo"
+  },
+  "tiquismiquis": {
+    "translation": "meticulous / fussy",
+    "pos": "adjective",
+    "context": "El sistema inmunitario es tan tiquismiquis en este proceso"
+  },
+  "enfermedades autoinmunes": {
+    "translation": "autoimmune diseases",
+    "pos": "noun phrase",
+    "context": "pueden originarse enfermedades autoinmunes"
+  },
+  "nos ataca": {
+    "translation": "attacks us",
+    "pos": "verb phrase",
+    "context": "el sistema nos ataca desde dentro"
+  },
+  "dedicamos tiempo": {
+    "translation": "we dedicate time",
+    "pos": "verb phrase",
+    "context": "merece que le dediquemos tiempo en otro momento"
   },
   "hay que arrancar": {
-    "translation": "has to be started",
-    "pos": "expression",
-    "context": "hay que arrancar primero"
+    "translation": "it has to be started up",
+    "pos": "verb phrase",
+    "context": "pero que hay que arrancar primero"
   },
   "recombinan partes": {
     "translation": "recombine parts",
     "pos": "verb phrase",
-    "context": "recombinan partes de su código"
+    "context": "las células del sistema adquirido recombinan partes de su código genético"
   },
-  "se desarrolla a diario": {
-    "translation": "develops daily",
-    "pos": "expression",
-    "context": "se desarrolla a diario"
+  "universidad del homicidio": {
+    "translation": "university of homicide",
+    "pos": "noun phrase",
+    "context": "acuden después a la universidad del homicidio donde solo sobrevive el 2%"
   },
-  "en pocas palabras – kurzgesagt": {
-    "translation": "in a nutshell",
-    "pos": "expression",
-    "context": "En Pocas Palabras"
+  "ponerse enfermos": {
+    "translation": "to get sick",
+    "pos": "verb phrase",
+    "context": "¿por qué nos ponemos enfermos?"
+  },
+  "ventana a": {
+    "translation": "window to",
+    "pos": "noun phrase",
+    "context": "solo hemos abierto una minusculísima ventana a la fascinante batalla"
+  },
+  "batalla entre": {
+    "translation": "battle between",
+    "pos": "noun phrase",
+    "context": "la fascinante batalla entre la vida y la muerte"
   },
   "redactor principal": {
-    "translation": "main writer/editor",
+    "translation": "main writer",
     "pos": "noun phrase",
-    "context": "fundador y redactor principal"
+    "context": "fundador y redactor principal de Kurzgesagt"
   },
-  "oculto microverso": {
-    "translation": "hidden microverse",
+  "cambiar para siempre": {
+    "translation": "to change forever",
+    "pos": "verb phrase",
+    "context": "cambiará para siempre nuestra forma de pensar"
+  },
+  "términos divertidos": {
+    "translation": "fun terms",
     "pos": "noun phrase",
-    "context": "el oculto microverso"
+    "context": "Redactado en términos tan divertidos y comprensibles"
   },
-  "no debe sentirse obligado": {
-    "translation": "shouldn't feel obligated",
-    "pos": "expression",
+  "mayor profundidad": {
+    "translation": "greater depth",
+    "pos": "noun phrase",
+    "context": "el libro trata el tema con mayor profundidad"
+  },
+  "testigos de": {
+    "translation": "witnesses of",
+    "pos": "noun phrase",
+    "context": "Sean testigos de las guerras entre miles de millones de invasores"
+  },
+  "cortes el cáncer": {
+    "translation": "cuts, cancer",
+    "pos": "noun phrase",
+    "context": "nos protege de cortes, el cáncer, la COVID"
+  },
+  "un placer para la vista": {
+    "translation": "a pleasure for the eyes",
+    "pos": "noun phrase",
+    "context": "Inmune es divertido, un placer para la vista e incluso huele bien"
+  },
+  "vínculo de la descripción": {
+    "translation": "link in the description",
+    "pos": "noun phrase",
+    "context": "Haga clic en el vínculo de la descripción para pedirlo hoy mismo"
+  },
+  "convertirse en": {
+    "translation": "to become",
+    "pos": "verb phrase",
+    "context": "convertirse en patrocinador y unirse al ejército de pájaros"
+  },
+  "sentirse obligado": {
+    "translation": "to feel obligated",
+    "pos": "verb phrase",
     "context": "no debe sentirse obligado"
+  },
+  "apoyarnos directamente": {
+    "translation": "to support us directly",
+    "pos": "verb phrase",
+    "context": "si desea apoyarnos directamente"
+  },
+  "hospedadores": {
+    "translation": "hosts / inhabitants",
+    "pos": "noun",
+    "context": "Los habitantes espeluznantes y reptantes consideran nuestros cuerpos un ecosistema"
+  },
+  "especializados": {
+    "translation": "specialized",
+    "pos": "adjective",
+    "context": "soldados no especializados"
+  },
+  "eficaces": {
+    "translation": "effective",
+    "pos": "adjective",
+    "context": "increíblemente eficaces y mortales"
+  },
+  "mortales": {
+    "translation": "deadly",
+    "pos": "adjective",
+    "context": "increíblemente eficaces y mortales"
+  },
+  "desplegar": {
+    "translation": "to deploy",
+    "pos": "verb",
+    "context": "lentas de desplegar"
+  },
+  "proteica": {
+    "translation": "protein (adj)",
+    "pos": "adjective",
+    "context": "encajar con una pieza proteica concreta"
+  },
+  "concreta": {
+    "translation": "specific / concrete",
+    "pos": "adjective",
+    "context": "una pieza proteica concreta"
+  },
+  "potencia": {
+    "translation": "potential",
+    "pos": "noun",
+    "context": "miles de millones de piezas enemigas en potencia"
+  },
+  "memorizados": {
+    "translation": "memorized",
+    "pos": "adjective",
+    "context": "bacterias y virus comunes memorizados"
+  },
+  "ineficaces": {
+    "translation": "ineffective",
+    "pos": "adjective",
+    "context": "pero son ineficaces frente a los miles de millones de mutaciones"
+  },
+  "adquirido": {
+    "translation": "acquired",
+    "pos": "adjective",
+    "context": "el sistema inmunitario adquirido"
+  },
+  "recombinan": {
+    "translation": "recombine",
+    "pos": "verb",
+    "context": "las células del sistema adquirido recombinan partes"
   }
 }

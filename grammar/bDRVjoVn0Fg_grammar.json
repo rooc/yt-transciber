@@ -1,17 +1,22 @@
 [
   {
-    "spanish": "Si cada una tuviera el tamaño de una persona, seríamos más altos que 20 montes Everest.",
-    "english": "If each one had the size of a person, we would be taller than 20 Mount Everests.",
-    "explanation": "Past subjunctive (tuviera) + conditional (seríamos) - hypothetical situation in the present"
+    "spanish": "Aunque algunos son bienvenidos, la mayoría no.",
+    "english": "Although some are welcome, most are not.",
+    "explanation": "Subjunctive mood not needed here, but uses 'aunque' (although) with indicative for factual contrast between two groups"
   },
   {
-    "spanish": "Si quiere ayudarnos directamente para que hagamos más, puede comprar algo bonito en nuestra tienda.",
-    "english": "If you want to help us directly so that we make more, you can buy something nice in our store.",
-    "explanation": "Present subjunctive (hagamos) after 'para que' - expresses purpose"
+    "spanish": "Si la cosa funciona, dos células se unirán después de un complicado baile.",
+    "english": "If things work out, two cells will join after a complicated dance.",
+    "explanation": "First conditional - 'si' + present tense, future tense in main clause for real/likely situations"
   },
   {
-    "spanish": "Dentro de nosotros todos llevamos al menos una de estas células para combatir la primera bacteria mortal que surja en una ciudad de Marte dentro de 100 años.",
-    "english": "Inside all of us we carry at least one of these cells to fight the first deadly bacteria that emerges in a city on Mars within 100 years.",
-    "explanation": "Present subjunctive (surja) after relative clause with future uncertainty"
+    "spanish": "Es uno de los motivos de que todos los años tengamos que combatir enfermedades como la gripe.",
+    "english": "It's one of the reasons why every year we have to fight diseases like the flu.",
+    "explanation": "Present subjunctive after 'motivos de que' - expressing necessity/obligation with emotional reaction trigger"
+  },
+  {
+    "spanish": "Si el proceso se equivoca y escapan células que reconocen nuestras propias piezas proteicas, pueden originarse enfermedades autoinmunes.",
+    "english": "If the process fails and cells that recognize our own protein pieces escape, autoimmune diseases can develop.",
+    "explanation": "Complex relative clause with 'que' + subjunctive implication in conditional context, plus passive-like construction 'pueden originarse'"
   }
 ]
