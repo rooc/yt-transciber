@@ -323,6 +323,17 @@ Extract 2-3 word phrases containing **complex verb tenses and grammatical struct
 - Basic ser/estar: "es bueno", "está aquí"
 - These don't demonstrate B1+ grammar complexity
 
+**DO NOT extract overly simple multi-word phrases:**
+Even 2-3 word phrases should be excluded if they consist entirely of A1-A2 basic components without B1+ grammatical complexity. These are too simple:
+
+- **Negative + basic verb**: "no entiendo", "no sé", "no creo" - just negation of A1 verbs
+- **Pronoun + simple past**: "me dijo", "te vi", "nos contó" - basic preterite with indirect objects
+- **Basic verb + preposition**: "voy a", "es para", "tengo que" - A1-level combinations
+- **Simple questions/clauses**: "no sé si", "creo que", "dice que" - basic conjunctions with A1 verbs
+- **Subject + simple verb**: "tú eres", "yo digo", "él tiene" - elementary sentence structure
+
+**Key rule:** If ALL words in the phrase are A1-A2 basic AND the grammatical structure is elementary (present, preterite, basic word order), **skip it**. Only include multi-word phrases that demonstrate B1+ grammar complexity OR contain at least one B1+ word.
+
 **DO NOT extract (skip these):
 
 #### 1. Basic A1-A2 Words

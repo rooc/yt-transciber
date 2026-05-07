@@ -34,11 +34,6 @@
     "pos": "preterite reflexive",
     "context": "me sentí especial"
   },
-  "me dijo": {
-    "translation": "he/she told me",
-    "pos": "preterite with indirect object",
-    "context": "me dijo Uh normalmente este diente"
-  },
   "me sacaron": {
     "translation": "they took out (for me)",
     "pos": "preterite with indirect object",
@@ -58,11 +53,6 @@
     "translation": "it didn't calm me",
     "pos": "negative + reflexive",
     "context": "no me calmó eso"
-  },
-  "no entiendo de": {
-    "translation": "I don't understand about",
-    "pos": "negative + preposition",
-    "context": "no entiendo de Raíces de dientes"
   },
   "vi que": {
     "translation": "he saw that",
@@ -134,11 +124,6 @@
     "pos": "imperfect",
     "context": "yo ya Parecía un hámster"
   },
-  "no sé si": {
-    "translation": "I don't know if",
-    "pos": "negative + interrogative",
-    "context": "no sé si las ardillas comen nueces"
-  },
   "dije voy": {
     "translation": "I said I'm going",
     "pos": "preterite + present",
@@ -173,11 +158,6 @@
     "translation": "they're called that",
     "pos": "reflexive passive",
     "context": "las muelas del juicio se llaman así"
-  },
-  "nos salen": {
-    "translation": "they come out on us",
-    "pos": "reflexive",
-    "context": "por qué nos salen dientes nuevos"
   },
   "tenemos una": {
     "translation": "we have a",
@@ -219,20 +199,10 @@
     "pos": "reflexive with double pronouns",
     "context": "tal vez nos lo merecemos"
   },
-  "tengo la": {
-    "translation": "I have the",
-    "pos": "present",
-    "context": "tengo la excusa de comer mucho helado"
-  },
   "puedo ponerme": {
     "translation": "I can put myself",
     "pos": "modal + reflexive",
     "context": "puedo ponerme ciega a helado"
-  },
-  "es para": {
-    "translation": "it's for",
-    "pos": "verb + preposition",
-    "context": "Ay es para Mis dientes"
   },
   "me ayuda": {
     "translation": "it helps me",
@@ -254,20 +224,10 @@
     "pos": "negative present",
     "context": "no creemos en las hadas"
   },
-  "vamos a": {
-    "translation": "we go to",
-    "pos": "present + preposition",
-    "context": "No vamos a una estación de tren"
-  },
   "cogemos el": {
     "translation": "we take the",
     "pos": "present",
     "context": "cogemos el primer ratón"
-  },
-  "tú eres": {
-    "translation": "you are",
-    "pos": "present",
-    "context": "tú eres El Elegido"
   },
   "vas a bendecir": {
     "translation": "you're going to bless",
@@ -318,11 +278,6 @@
     "translation": "I'm a little",
     "pos": "estar + adverb + adjective",
     "context": "hoy estoy un poco tonta"
-  },
-  "es por": {
-    "translation": "it's because of",
-    "pos": "verb + preposition",
-    "context": "es por la anestesia"
   },
   "no me culpes": {
     "translation": "don't blame me",
