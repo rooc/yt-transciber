@@ -721,6 +721,44 @@ The AI will:
 
 ---
 
+### Merge Transcript Lines
+**Command:** `"merge VIDEO_ID"` or `"merge lines VIDEO_ID"`
+
+Merges short transcript lines to create longer segments (80-120 characters per line) for better readability:
+- Keeps the first timestamp of each merged segment
+- Removes redundant timestamps from merged lines
+- Preserves all original text content
+- Maintains 80-120 character target length per line
+
+**How to use:**
+Just say: `"merge 087XVp3JIpk"` or `"merge lines Psb9g9UxqZs"`
+
+The AI will:
+- Read the original transcript file
+- Merge consecutive lines to achieve 80-120 character segments
+- Keep timestamps aligned with merged content
+- Overwrite the original file with the merged version
+- Report how many lines were reduced
+
+**Example:**
+```
+Before (short lines):
+**0:00** Hola a todos y bienvenidos a un nuevo
+**0:03** episodio de nuestro podcast para
+**0:05** aprender español aquí hablamos español
+**0:10** de una manera no muy rápida Clara y
+**0:14** cuando menciono una palabra difícil la
+**0:17** intento
+
+After (merged lines):
+**0:00** Hola a todos y bienvenidos a un nuevo episodio de nuestro podcast para aprender español aquí hablamos español
+**0:10** de una manera no muy rápida Clara y cuando menciono una palabra difícil la intento
+```
+
+**Note:** This modifies the original transcript file. Use before translation if you want cleaner segments.
+
+---
+
 ### Delete Transcript
 **Command:** `"delete VIDEO_ID"` or `"remove VIDEO_ID"`
 
@@ -748,6 +786,7 @@ The AI will:
 
 **Ready to work! Just say:**
 - `"translate new"` - Translate all new transcripts (asks for grammar sentence count: 3, 4, 5, or custom)
+- `"merge VIDEO_ID"` - Merge short transcript lines into longer segments (80-120 chars)
 - `"check files"` - Run validation and cleanup
 - `"delete VIDEO_ID"` or `"remove VIDEO_ID"` - Remove a transcript
 
