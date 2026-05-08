@@ -278,24 +278,32 @@ These are often MORE useful than single words. **Extract phrases that demonstrat
 Extract 2-3 word phrases containing **complex verb tenses and grammatical structures** EVEN if individual words are A1-A2 level. These demonstrate B1+ grammar and are valuable for learning:
 
 **Include phrases with these B1+ structures:**
-- **Subjunctive**: "sin haberla visto" (without having seen her), "que tú digas" (that you say), "cuando vengas" (when you come)
+- **Subjunctive (present)**: "sin haberla visto" (without having seen her), "que tú digas" (that you say), "cuando vengas" (when you come)
+- **Imperfect subjunctive**: "si tuviera" (if I had), "quisiera que fuera" (I would like it to be), "ojalá supiera" (I wish I knew) — very common in spoken Spanish, always extract
+- **Past perfect subjunctive**: "si hubiera sabido" (if I had known), "ojalá hubiera podido" (I wish I could have)
 - **Conditional**: "lo haría" (I would do it), "querrías venir" (would you want to come), "me gustaría" (I would like)
 - **Future**: "lo haré" (I will do it), "qué será" (what will it be), "dirán que" (they will say that)
 - **Imperfect**: "cuando era" (when I was), "lo hacía" (I used to do it), "si tenía" (if I had)
 - **Compound tenses**: "había comido" (had eaten), "habría dicho" (would have said), "ha estado" (has been)
-- **Imperative + object**: "dime eso" (tell me that), "cuéntame" (tell me), "dámelo" (give it to me)
+- **Gerund constructions**: "llevaba esperando" (had been waiting), "sigue hablando" (keeps talking), "sin saberlo" (without knowing it) — gerund is B1+ and often missed
+- **Imperative + object pronoun**: "dime eso" (tell me that), "cuéntame" (tell me), "dámelo" (give it to me)
 - **Relative clauses**: "el libro que compré" (the book that I bought), "la persona de quien hablamos" (the person we're talking about)
 - **Reflexive pronouns + verbs**: "me acuerdo de" (I remember), "se olvidan de" (they forget)
 - **Preposition + infinitive**: "antes de comer" (before eating), "después de llegar" (after arriving), "al entrar" (upon entering)
+- **Subjunctive-triggering conjunctions + verb**: "aunque llueva" (even if it rains), "para que entiendas" (so that you understand), "a menos que vengas" (unless you come), "con tal de que funcione" (as long as it works) — the conjunction + subjunctive chunk is always extractable as a unit
+- **Passive constructions** (ser/estar + past participle): "fue construido" (it was built), "está roto" (it's broken), "estaba perdido" (was lost) — distinguish from simple "es bueno / está aquí" which are excluded
 
 **Examples to extract (B1+ grammar, even with basic words):**
-- "sin haberla visto" - perfect infinitive with pronouns
-- "que tú dirás" - future in subordinate clause
-- "si hubiera sabido" - past perfect subjunctive
-- "me lo estoy diciendo" - present progressive with double pronouns
-- "lo he hecho" - present perfect (auxiliary + participle)
-- "para que entiendas" - present subjunctive
-- "cuando llegué" - preterite in time clause (advanced usage)
+- "sin haberla visto" — perfect infinitive with pronouns
+- "que tú dirás" — future in subordinate clause
+- "si hubiera sabido" — past perfect subjunctive
+- "me lo estoy diciendo" — present progressive with double pronouns
+- "lo he hecho" — present perfect (auxiliary + participle)
+- "para que entiendas" — present subjunctive
+- "aunque llueva" — subjunctive triggered by conjunction
+- "si tuviera tiempo" — imperfect subjunctive
+- "llevaba tres horas esperando" — durative past with gerund
+- "cuando llegué" — preterite in time clause (advanced usage)
 
 **Key principle:** A word like "decir" (A1) in simple present "yo digo" is excluded. But "que dirás" is included because it demonstrates B1+ grammar (future in subordinate clause).
 
@@ -317,6 +325,26 @@ Extract 2-3 word phrases containing **complex verb tenses and grammatical struct
 - "en el quinto pino" (in the middle of nowhere)
 - "costar un ojo de la cara" (to cost an arm and a leg)
 
+#### Reflexive Verbs with Meaning Shift
+
+**Always extract reflexive forms when they have a distinct meaning from the base verb**, even if the base verb is A1-A2:
+
+- "ir" → "irse" (to leave/take off)
+- "dormir" → "dormirse" (to fall asleep)
+- "poner" → "ponerse" (to become / to put on)
+- "llevar" → "llevarse" (to take away / to get along with)
+- "quedar" → "quedarse" (to stay / to remain)
+
+These are B1+ semantics regardless of the base verb's level.
+
+#### Morphological Forms to Include
+
+Even when the base word is A1-A2, include the following morphological forms:
+
+- **Superlatives (-ísimo)**: "rapidísimo", "grandísimo", "chiquitísimo" — the form itself is B1+
+- **Non-standard diminutives**: "chiquitito", "ahorita" (especially in Latin American Spanish)
+- **Nominalizations of basic verbs**: "el saber", "el querer" — gerund/infinitive used as a noun
+
 **DO NOT extract simple phrases:**
 - Simple present: "yo digo", "él come", "tú tienes"
 - Simple preterite: "yo dije", "él comió", "tú tuviste"
@@ -326,11 +354,14 @@ Extract 2-3 word phrases containing **complex verb tenses and grammatical struct
 **DO NOT extract overly simple multi-word phrases:**
 Even 2-3 word phrases should be excluded if they consist entirely of A1-A2 basic components without B1+ grammatical complexity. These are too simple:
 
-- **Negative + basic verb**: "no entiendo", "no sé", "no creo" - just negation of A1 verbs
-- **Pronoun + simple past**: "me dijo", "te vi", "nos contó" - basic preterite with indirect objects
-- **Basic verb + preposition**: "voy a", "es para", "tengo que" - A1-level combinations
-- **Simple questions/clauses**: "no sé si", "creo que", "dice que" - basic conjunctions with A1 verbs
-- **Subject + simple verb**: "tú eres", "yo digo", "él tiene" - elementary sentence structure
+- **Negative + basic verb in simple tense**: "no entiendo", "no sé", "no creo"
+- **Pronoun + simple past**: "me dijo", "te vi", "nos contó" — basic preterite with indirect objects
+- **Basic verb + preposition**: "voy a", "es para", "tengo que" — A1-level combinations
+- **Simple subordinate clauses with indicative**: "no sé si", "creo que", "dice que" — **but only when followed by a simple indicative clause**. If the same opener is followed by subjunctive, conditional, or a complex structure — include the whole phrase. Examples:
+  - "no sé si vendrá" → include (future)
+  - "creo que hubiera sido mejor" → include (past perfect subjunctive)
+  - "no sé si viene" → exclude (simple present)
+- **Subject + simple verb**: "tú eres", "yo digo", "él tiene" — elementary sentence structure
 
 **Key rule:** If ALL words in the phrase are A1-A2 basic AND the grammatical structure is elementary (present, preterite, basic word order), **skip it**. Only include multi-word phrases that demonstrate B1+ grammar complexity OR contain at least one B1+ word.
 
@@ -403,6 +434,24 @@ Skip words that are the same or similar in English:
   "en el quinto pino": {
     "translation": "in the middle of nowhere",
     "pos": "expression"
+  },
+  "si tuviera tiempo": {
+    "translation": "if I had time",
+    "pos": "verb phrase",
+    "context": "Si tuviera tiempo, aprendería a tocar la guitarra."
+  },
+  "aunque llueva": {
+    "translation": "even if it rains",
+    "pos": "expression",
+    "context": "Vamos a salir aunque llueva."
+  },
+  "irse": {
+    "translation": "to leave / take off",
+    "pos": "verb"
+  },
+  "rapidísimo": {
+    "translation": "extremely fast",
+    "pos": "adjective"
   }
 }
 ```
