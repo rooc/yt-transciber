@@ -1,4 +1,4 @@
-# YT-trans
+# Yotuscript
 
 A YouTube video transcript viewer with bilingual support.
 
@@ -244,34 +244,6 @@ node server.js
 ├── OPENCODE.md         # AI instructions (ALL operations)
 └── server.js           # Entry point (web server only)
 ```
-
-## Troubleshooting
-
-**Translation not showing?**
-- Check that `VIDEO_ID_translation.md` exists
-- Verify timestamps match the original file
-
-**Vocabulary not appearing?**
-- Check `vocab/VIDEO_ID_vocab.json` exists
-- Ensure words are B1+ level (not in exclusion lists)
-
-**Grammar sentences not showing?**
-- Check `grammar/VIDEO_ID_grammar.json` exists
-- Click the "Grammar sentences" panel to expand it
-
-**Summary not showing?**
-- Check `summary/VIDEO_ID_summary.json` exists
-- Summary icon appears only when summary file is available
-- Click the 📋 icon next to video title
-
-**Stats not updating?**
-- Stats save automatically when you mark videos as learned or pause playback
-- Check browser console for errors
-- Stats are stored in both localStorage and `data/stats.json`
-
-**Server won't start?**
-- Check port 9090 is available
-- Verify Node.js is installed
 
 ## License
 
