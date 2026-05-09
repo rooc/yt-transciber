@@ -304,6 +304,9 @@ Extract 2-3 word phrases containing **complex verb tenses and grammatical struct
 - "si tuviera tiempo" — imperfect subjunctive
 - "llevaba tres horas esperando" — durative past with gerund
 - "cuando llegué" — preterite in time clause (advanced usage)
+- "ojalá supiera" — imperfect subjunctive (very common in spoken Spanish)
+- "ojalá hubiera podido" — past perfect subjunctive
+- "con tal de que funcione" — subjunctive-triggering conjunction + verb
 
 **Key principle:** A word like "decir" (A1) in simple present "yo digo" is excluded. But "que dirás" is included because it demonstrates B1+ grammar (future in subordinate clause).
 
@@ -313,6 +316,11 @@ Extract 2-3 word phrases containing **complex verb tenses and grammatical struct
 - "dar la lata" (to annoy/bother)
 - "ponerse a" (to start doing)
 - "acabar de" (to have just done)
+- "contar con" (to count on)
+- "soñar con" (to dream about)
+- "acordarse de" (to remember)
+- "pensar en" (to think about)
+- "depender de" (to depend on)
 
 **Common collocations:**
 - "muela del juicio" (wisdom tooth)
@@ -451,10 +459,124 @@ Skip words that are the same or similar in English:
   },
   "rapidísimo": {
     "translation": "extremely fast",
-    "pos": "adjective"
+    "pos": "adjective",
+    "level": "B1",
+    "source": "superlative"
+  },
+  "tenga": {
+    "translation": "I have (subjunctive)",
+    "pos": "verb",
+    "level": "A1_A2_advanced_form",
+    "source": "subjunctive_conjugation",
+    "context": "Espero que tengas razón."
   }
 }
 ```
+
+### Additional Word Categories to Include
+
+#### Compound Nouns
+
+Extract compound nouns (words formed by combining two or more words):
+
+- "abrelatas" (can opener)
+- "paraguas" (umbrella)
+- "muela del juicio" (wisdom tooth)
+- "sacacorchos" (corkscrew)
+- "lavaplatos" (dishwasher)
+
+#### False Friends
+
+Words that look like English but have different meanings:
+
+| Spanish | Looks Like | Actually Means |
+|---------|-----------|----------------|
+| actual | actual | current/present |
+| embarazada | embarrassed | pregnant |
+| éxito | exit | success |
+| asistir | assist | to attend |
+| pretender | pretend | to try/attempt |
+| realizar | realize | to carry out/do |
+
+#### Abstract Nouns
+
+Include abstract concepts and ideas:
+
+- "libertad" (freedom)
+- "alegría" (joy)
+- "justicia" (justice)
+- "felicidad" (happiness)
+- "conocimiento" (knowledge)
+
+#### Adverbs and Conjunctions
+
+Often B1+ level, especially transitional phrases:
+
+- "sin embargo" (however)
+- "por lo tanto" (therefore)
+- "aunque" (even if/although)
+- "a pesar de" (despite)
+- "a menos que" (unless)
+- "mientras tanto" (meanwhile)
+
+### Advanced Forms of A1-A2 Words
+
+Include **all forms** of A1-A2 words if they appear in **B1+ structures**:
+
+| Base Word | A1-A2 Form | B1+ Form | Translation |
+|-----------|-----------|----------|-------------|
+| tener | tengo | tendría | I would have |
+| ser | soy | sería | I would be |
+| estar | estoy | estaré | I will be |
+| ir | voy | iría | I would go |
+| hacer | hago | haré | I will do |
+
+**Include these advanced forms:**
+- **Subjunctive**: "tenga" (I have), "sea" (I am), "haga" (I do)
+- **Conditional**: "tendría" (I would have), "sería" (I would be)
+- **Future**: "tendré" (I will have), "seré" (I will be)
+- **Imperfect**: "tenía" (I had), "era" (I was)
+- **Compound tenses**: "he tenido" (I have had), "había sido" (I had been)
+- **Reflexive forms**: "me levanto" (I get up), "te vistes" (you get dressed)
+
+### Enhanced JSON Fields
+
+**For each vocabulary entry, include these fields when possible:**
+
+1. **translation** — Use 1-5 words, lowercase
+2. **pos** — Part of speech (verb, noun, adjective, expression, verb phrase, noun phrase)
+3. **level** — CEFR level: "B1", "B2", "C1", or "A1_A2_advanced_form"
+4. **source** — Origin: "idiom", "verb_conjugation", "compound_noun", "false_friend", "technical_term", "reflexive_verb", "superlative", "subjunctive_phrase"
+5. **context** — Original Spanish sentence (optional but recommended)
+
+### Quick Reference: Include vs Exclude
+
+| **Category** | **Include** | **Exclude** |
+|--------------|-------------|-------------|
+| **Multi-word phrases** | All (prioritize these) | None |
+| **Verb forms** | Subjunctive, conditional, future, imperfect, compound tenses, reflexive | Only if standalone **and** simple present/preterite **and** in A1-A2 list |
+| **Single words** | Superlatives, diminutives, abstract nouns, false friends, technical terms, reflexive verbs | Only if standalone **and** in A1-A2 list **and** not advanced |
+| **Compound nouns** | All | None |
+| **Idioms/Expressions** | All | None |
+| **Proper nouns** | None | All |
+| **English loanwords** | None | All |
+
+**Key Principle: When in doubt, include the word/phrase.** Better to over-include than miss important vocabulary.
+
+### Implementation Tips
+
+1. **Use CEFR Lists**: Cross-check words against **A1-A2 lists** (e.g., [Spanish CEFR vocabulary](https://www.spanishdict.com/cefr)) to confirm level.
+
+2. **Leverage POS Tagging**: Use **part-of-speech tagging** to identify verb forms, adjectives, etc.
+
+3. **Regex for Verb Forms**: Use **regular expressions** to catch advanced verb forms:
+   - Future endings: -é, -ás, -á, -emos, -éis, -án
+   - Conditional endings: -ía, -ías, -ía, -íamos, -íais, -ían
+   - Subjunctive indicators: que + different stem/ending
+
+4. **Contextual Analysis**: For ambiguous words, **include context** in the output to clarify meaning.
+
+5. **Prioritize Comprehensiveness**: When in doubt, **include the word/phrase**. Better to over-include than miss important vocabulary.
 
 ---
 
@@ -843,3 +965,9 @@ The AI will:
 1. Extracts multi-word phrases (2-4 words) as primary vocabulary
 2. Creates grammar sentences with B1+ structures (subjunctive, compound tenses, etc.) - **you choose the count (3-5 or custom)**
 3. Provides English translations and brief grammar explanations
+
+---
+
+## Final Note
+
+**When in doubt, include the word/phrase.** This ensures **no important vocabulary is missed**, even if it means slightly more entries to review later.
