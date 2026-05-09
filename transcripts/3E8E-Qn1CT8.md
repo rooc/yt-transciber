@@ -53,8 +53,7 @@ source: https://www.youtube.com/watch?v=3E8E-Qn1CT8
 **5:18** Es que yo creo que fue después. Al principio eso a veces pasa como que tú hay una persona que dices, "Dios mío,
 **5:23** esta persona en la vida podríamos ser amigas y luego fíjate  que no contigo no." Con esta tensión sexual,
 **5:28** con esta tensión que no resuelta todavía
-**5:31** 
-**5:32** estoy en ello. Ay.
+**5:31** estoy en ello. Ay.
 **5:34** Pues eso, la oxitocina nos une, las endorfinas nos lo hacen pasánoslo bien y la dopamina hace que queramos volver a quedar con nuestros amigos. Qué bonito, tía. G.
 **5:42** Me gusta un montón. Sí,
 **5:43** muchas gracias. Pues es que hay una cosa muy bonita en esto. ¿El qué? En la etimología de la palabra amigo, ¿vale? No, de la palabra compañero 
@@ -65,14 +64,12 @@ source: https://www.youtube.com/watch?v=3E8E-Qn1CT8
 **6:15** cortad ahí
 **6:20** es  con con Ah, okay.
 **6:23** Y panis, que es pan. O sea, un compañero etimológicamente es la persona con la que compartes el pan. Ah, qué guay. Pero porque eres celíaca,
-**6:32** 
-**6:32** ¿no? [ __ ] ¿de dónde sale eso? Ah, vale, que contigo no podría, ¿no? Por eso no somos compañeras.
+**6:32** ¿no? [ __ ] ¿de dónde sale eso? Ah, vale, que contigo no podría, ¿no? Por eso no somos compañeras.
 **6:39** Claro. O sea, es muy bonito esto porque el pan al final ha sido un alimento tan importante que el amigo era con el que
 **6:46** lo compartía, ¿sabes? Es muy bonito. Gu Y de hecho, esto no solamente pasa con el pan, por ejemplo, en la cultura anglosajona en inglés, ¿cómo se dice como colega? mate.
 **6:55** Mate,
 **6:56** pues esta palabra mate viene de una palabra del bajo alemán que está compuesta por G, que es un prefijo de
 **7:03** compañía, como nuestro co de cooperar que marca esto. Y luego también la raíz matiz.
-**7:10** 
 **7:10** Wow.
 **7:11** Más o menos el bajo alemán lo tengo un poco. Que significa alimento, o sea, sería la persona con la que compartes el alimento también. Qué guay. Pero es que no es lo
 **7:19** más interesante de esto y es que de este matiz viene un alimento concreto en inglés,

@@ -226,13 +226,11 @@ source: "https://www.youtube.com/watch?v=VIDEO_ID"
 - ✅ Maintain timestamp alignment with original Spanish
 - ✅ Use proper English punctuation and capitalization
 - ✅ Translate idioms to their English equivalents
-- ✅ **Merge timestamps with 1-2 words into the previous timestamp** - Short timestamps (e.g., "**0:45** sí" or "**1:23** muy bien") should be combined with the previous line
 
 **DON'T:**
 - ❌ Translate word-for-word (sounds robotic)
 - ❌ Skip sentences or paragraphs
 - ❌ Change the meaning or add opinions
-- ❌ Leave short 1-2 word timestamps as separate lines
 
 **Example:**
 ```
@@ -898,7 +896,6 @@ The AI will:
 **Command:** `"merge VIDEO_ID"` or `"merge lines VIDEO_ID"`
 
 Merges short transcript lines to create longer segments (80-120 characters per line) for better readability:
-- **IMPORTANT:** Timestamps with 1-2 words should be merged into the PREVIOUS timestamp
 - Keeps the first timestamp of each merged segment
 - Removes redundant timestamps from merged lines
 - Preserves all original text content
