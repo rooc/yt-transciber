@@ -377,11 +377,14 @@ button.danger:hover {
 .transcript-line {
 	font-size: 1.25rem;
 	line-height: 1.4;
-	padding: 0.5rem 1.5rem;
+	padding: 0.5rem 2.75rem 0.5rem 1.5rem;
 	width: 100%;
 	position: relative;
 	max-width: 65vw;
 	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .transcript-dual {
@@ -398,11 +401,12 @@ button.danger:hover {
 .transcript-dual .original {
 	font-size: 1.25rem;
 	color: var(--text-primary);
-	padding: 1rem;
+	padding: 1rem 2.5rem 1rem 1rem;
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
 .transcript-dual .translated {
@@ -414,6 +418,7 @@ button.danger:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
 .loading {
@@ -835,10 +840,13 @@ button.active {
 
 /* Segment Repeat Mode - Pause Icon in Transcript */
 .segment-pause-icon {
+	position: absolute;
+	right: 0.5rem;
+	top: 50%;
+	transform: translateY(-50%);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	margin-left: 0.5rem;
 	padding: 0.15rem 0.4rem;
 	background-color: var(--brand);
 	border-radius: var(--radius-xs);

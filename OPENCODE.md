@@ -285,6 +285,7 @@ Extract 2-3 word phrases containing **complex verb tenses and grammatical struct
 - **Future**: "lo haré" (I will do it), "qué será" (what will it be), "dirán que" (they will say that)
 - **Imperfect**: "cuando era" (when I was), "lo hacía" (I used to do it), "si tenía" (if I had)
 - **Compound tenses**: "había comido" (had eaten), "habría dicho" (would have said), "ha estado" (has been)
+- **Conditional perfect with indirect object pronouns**: "les habría llevado" (it would have taken them), "nos habría costado" (it would have cost us), "te habría gustado" (you would have liked it) — the conditional perfect combined with indirect object pronouns creates complex B1+ verb phrases that should always be extracted
 - **Gerund constructions**: "llevaba esperando" (had been waiting), "sigue hablando" (keeps talking), "sin saberlo" (without knowing it) — gerund is B1+ and often missed
 - **Imperative + object pronoun**: "dime eso" (tell me that), "cuéntame" (tell me), "dámelo" (give it to me)
 - **Relative clauses**: "el libro que compré" (the book that I bought), "la persona de quien hablamos" (the person we're talking about)
@@ -307,6 +308,7 @@ Extract 2-3 word phrases containing **complex verb tenses and grammatical struct
 - "ojalá supiera" — imperfect subjunctive (very common in spoken Spanish)
 - "ojalá hubiera podido" — past perfect subjunctive
 - "con tal de que funcione" — subjunctive-triggering conjunction + verb
+- "les habría llevado" — conditional perfect with indirect object pronoun (would have taken them)
 
 **Key principle:** A word like "decir" (A1) in simple present "yo digo" is excluded. But "que dirás" is included because it demonstrates B1+ grammar (future in subordinate clause).
 

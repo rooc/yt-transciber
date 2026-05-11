@@ -322,5 +322,11 @@
     "pos": "noun",
     "level": "B1",
     "context": "cualquier duda o sugerencia"
+  },
+  "les habría llevado": {
+    "translation": "it would have taken them",
+    "pos": "verb phrase",
+    "level": "B2",
+    "context": "fallos que a los expertos les habría llevado meses detectar"
   }
 }
