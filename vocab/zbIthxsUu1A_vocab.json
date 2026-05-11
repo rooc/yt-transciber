@@ -1,0 +1,352 @@
+{
+  "magufada": {
+    "translation": "pseudo-scientific nonsense / quackery",
+    "pos": "noun",
+    "context": "Hay mucha magufada alrededor del tema del sol"
+  },
+  "magufada alrededor": {
+    "translation": "pseudo-scientific nonsense around",
+    "pos": "noun phrase",
+    "context": "Hay mucha magufada alrededor del tema del sol"
+  },
+  "meterse una": {
+    "translation": "to have/get something (colloquial)",
+    "pos": "verb phrase",
+    "context": "Se levanta y le gusta meterse una"
+  },
+  "dejar de ayunar": {
+    "translation": "to stop fasting",
+    "pos": "verb phrase",
+    "context": "Desayuno significa dejar de ayunar"
+  },
+  "salir del ayuno": {
+    "translation": "to exit/break the fast",
+    "pos": "verb phrase",
+    "context": "Sales del ayuno por la mañana"
+  },
+  "misma etimología": {
+    "translation": "same etymology",
+    "pos": "noun phrase",
+    "context": "Esmorzar tiene la misma etimología que almorzar"
+  },
+  "tener preparado": {
+    "translation": "to have prepared",
+    "pos": "verb phrase",
+    "context": "¿Qué te habías preparado?"
+  },
+  "habías preparado": {
+    "translation": "you had prepared",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "verb_conjugation"
+  },
+  "pegar un bocado": {
+    "translation": "to take a bite",
+    "pos": "verb phrase",
+    "context": "Pegar un bocado, un mordisco"
+  },
+  "es confuso": {
+    "translation": "it's confusing",
+    "pos": "adjective phrase"
+  },
+  "desdejuni": {
+    "translation": "breakfast (Catalan formal)",
+    "pos": "noun",
+    "context": "También tenéis desdejuni"
+  },
+  "en principio": {
+    "translation": "in principle / basically",
+    "pos": "expression"
+  },
+  "en vez de": {
+    "translation": "instead of",
+    "pos": "expression"
+  },
+  "en forma": {
+    "translation": "in form / shape",
+    "pos": "expression",
+    "context": "¿Cuál se parece un poco en forma?"
+  },
+  "falsos amigos": {
+    "translation": "false friends (cognates)",
+    "pos": "noun phrase",
+    "context": "Hay muchos falsos amigos"
+  },
+  "costar mucho": {
+    "translation": "to be very difficult / cost a lot",
+    "pos": "verb phrase",
+    "context": "Cuesta mucho cuando eres catalán"
+  },
+  "te crees": {
+    "translation": "you think/believe",
+    "pos": "verb phrase",
+    "level": "B1"
+  },
+  "tiene sentido": {
+    "translation": "it makes sense",
+    "pos": "expression"
+  },
+  "se pronunciaría": {
+    "translation": "it would be pronounced",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "conditional"
+  },
+  "haría referencia": {
+    "translation": "it would refer to",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "conditional"
+  },
+  "vendría de": {
+    "translation": "it would come from",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "conditional"
+  },
+  "antiguo régimen": {
+    "translation": "Ancien Régime / old regime",
+    "pos": "noun phrase",
+    "context": "El antiguo régimen francés"
+  },
+  "más o menos": {
+    "translation": "more or less",
+    "pos": "expression"
+  },
+  "se fue atrasando": {
+    "translation": "it kept getting delayed",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "imperfect_progressive"
+  },
+  "se formó": {
+    "translation": "it was formed",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "passive"
+  },
+  "duraban bastante": {
+    "translation": "they lasted quite a while",
+    "pos": "verb phrase"
+  },
+  "se empezó a retrasar": {
+    "translation": "it started to get delayed",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "reflexive"
+  },
+  "se iba retrasando": {
+    "translation": "it was getting more and more delayed",
+    "pos": "verb phrase",
+    "level": "B2",
+    "source": "imperfect_progressive"
+  },
+  "se hacía típico": {
+    "translation": "it was becoming typical",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "imperfect"
+  },
+  "podemos ver": {
+    "translation": "we can see",
+    "pos": "verb phrase"
+  },
+  "ha ido cambiando": {
+    "translation": "it has been changing",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "present_perfect_progressive"
+  },
+  "ha ido viajando": {
+    "translation": "it has been traveling",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "present_perfect_progressive"
+  },
+  "te dice": {
+    "translation": "it tells you",
+    "pos": "verb phrase"
+  },
+  "había una": {
+    "translation": "there was a",
+    "pos": "verb phrase",
+    "context": "Después había una S"
+  },
+  "no he terminado": {
+    "translation": "I haven't finished",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "present_perfect"
+  },
+  "no tienes por qué": {
+    "translation": "you don't have to",
+    "pos": "expression"
+  },
+  "se tomaba": {
+    "translation": "it was taken/used to be taken",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "imperfect"
+  },
+  "nombrar una cosa": {
+    "translation": "to name one thing",
+    "pos": "verb phrase"
+  },
+  "mantener una relación": {
+    "translation": "to maintain a relationship",
+    "pos": "verb phrase"
+  },
+  "nombrando el todo": {
+    "translation": "naming the whole",
+    "pos": "verb phrase",
+    "context": "Estás nombrando el todo por la parte"
+  },
+  "solía tener": {
+    "translation": "used to have",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "imperfect"
+  },
+  "acabas llamando": {
+    "translation": "you end up calling",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "acabar_de"
+  },
+  "no tiene nada que ver": {
+    "translation": "it has nothing to do with",
+    "pos": "expression"
+  },
+  "llevar juntos": {
+    "translation": "to bring/carry together",
+    "pos": "verb phrase",
+    "context": "Llevar juntos, aportar"
+  },
+  "estamos hablando": {
+    "translation": "we're talking",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "present_progressive"
+  },
+  "se reunían": {
+    "translation": "they would meet/used to meet",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "imperfect"
+  },
+  "se formaran": {
+    "translation": "they would form themselves",
+    "pos": "verb phrase",
+    "level": "B2",
+    "source": "subjunctive"
+  },
+  "hacían una pausa": {
+    "translation": "they would take a break",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "imperfect"
+  },
+  "empezó a usarse": {
+    "translation": "it started to be used",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "passive"
+  },
+  "me ha gustado": {
+    "translation": "I liked it",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "present_perfect"
+  },
+  "no está clara": {
+    "translation": "it's not clear",
+    "pos": "adjective phrase"
+  },
+  "indica actividad": {
+    "translation": "indicates activity",
+    "pos": "verb phrase"
+  },
+  "vendría de": {
+    "translation": "would come from",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "conditional"
+  },
+  "podría ser": {
+    "translation": "it could be",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "conditional"
+  },
+  "da igual": {
+    "translation": "it doesn't matter / it's all the same",
+    "pos": "expression"
+  },
+  "lo importante": {
+    "translation": "the important thing",
+    "pos": "noun phrase"
+  },
+  "vas a flipar": {
+    "translation": "you're going to flip out / be amazed",
+    "pos": "verb phrase",
+    "level": "B1",
+    "source": "colloquial"
+  },
+  "qué guay": {
+    "translation": "how cool / awesome",
+    "pos": "expression",
+    "level": "B1",
+    "source": "colloquial"
+  },
+  "etimología": {
+    "translation": "etymology",
+    "pos": "noun"
+  },
+  "mordisco": {
+    "translation": "bite / nibble",
+    "pos": "noun",
+    "context": "Pegar un bocado, un mordisco"
+  },
+  "metonimia": {
+    "translation": "metonymy",
+    "pos": "noun"
+  },
+  "monástico": {
+    "translation": "monastic",
+    "pos": "adjective",
+    "context": "El mundo monástico, con los monjes"
+  },
+  "ordeñada": {
+    "translation": "milked",
+    "pos": "adjective",
+    "context": "Leche recién ordeñada"
+  },
+  "cuenco": {
+    "translation": "bowl",
+    "pos": "noun",
+    "context": "Un cuenco de leche"
+  },
+  "circunflejo": {
+    "translation": "circumflex",
+    "pos": "noun",
+    "context": "El acento circunflejo"
+  },
+  "etimológica": {
+    "translation": "etymological",
+    "pos": "adjective",
+    "context": "Una S etimológica"
+  },
+  "almorzar": {
+    "translation": "to have lunch",
+    "pos": "verb",
+    "context": "La hora del mediodía para almorzar"
+  },
+  "catalán": {
+    "translation": "Catalan (language/person)",
+    "pos": "noun/adjective"
+  },
+  "eusquera": {
+    "translation": "Basque (language)",
+    "pos": "noun"
+  }
+}
