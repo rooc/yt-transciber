@@ -221,7 +221,11 @@ export function rewindBack() {
 			targetTime = Math.max(0, state.player?.getCurrentTime() - 5 || 0);
 		}
 		
-		if (state.player) state.player.seekTo(targetTime, true);
+		if (state.player) {
+			state.player.seekTo(targetTime, true);
+			// Update currentTime immediately so updateDisplay() calculates correct index
+			state.setCurrentTime(targetTime);
+		}
 		updateDisplay();
 	});
 }
@@ -252,7 +256,11 @@ export function rewindForward() {
 			targetTime = (state.player?.getCurrentTime() || 0) + 5;
 		}
 		
-		if (state.player) state.player.seekTo(targetTime, true);
+		if (state.player) {
+			state.player.seekTo(targetTime, true);
+			// Update currentTime immediately so updateDisplay() calculates correct index
+			state.setCurrentTime(targetTime);
+		}
 		updateDisplay();
 	});
 }
