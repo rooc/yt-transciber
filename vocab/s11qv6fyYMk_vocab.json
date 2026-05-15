@@ -1,0 +1,217 @@
+{
+  "anécdota": {
+    "translation": "anecdote/story",
+    "pos": "noun",
+    "context": "quiero empezar con una pequeña anécdota"
+  },
+  "reservó": {
+    "translation": "booked/reserved",
+    "pos": "verb",
+    "context": "un chico de Estados Unidos reservó conmigo su primera clase"
+  },
+  "mágicamente": {
+    "translation": "magically",
+    "pos": "adverb",
+    "context": "pensaba que mágicamente iba a mejorar su pronunciación"
+  },
+  "innato": {
+    "translation": "innate/inborn",
+    "pos": "adjective",
+    "context": "hay personas que tienen un talento innato por naturaleza"
+  },
+  "percibir": {
+    "translation": "to perceive",
+    "pos": "verb",
+    "context": "tienen la capacidad de percibir y reproducir sonidos"
+  },
+  "reproducir": {
+    "translation": "to reproduce",
+    "pos": "verb",
+    "context": "tienen la capacidad de percibir y reproducir sonidos"
+  },
+  "invertir": {
+    "translation": "to invest",
+    "pos": "verb",
+    "context": "la mayoría de personas tienen que invertir tiempo esfuerzo y dinero"
+  },
+  "pulir": {
+    "translation": "to polish/refine",
+    "pos": "verb",
+    "context": "deciden pulir su acento deciden trabajar en la pronunciación"
+  },
+  "fosilizados": {
+    "translation": "fossilized/ingrained",
+    "pos": "adjective",
+    "context": "ya hay muchos errores que están fosilizados"
+  },
+  "eliminarlos": {
+    "translation": "to eliminate/remove them",
+    "pos": "verb",
+    "context": "es mucho más difícil eliminarlos"
+  },
+  "golpes de voz": {
+    "translation": "voice beats/syllables",
+    "pos": "noun phrase",
+    "context": "se pronuncia en dos golpes de voz dos sílabas"
+  },
+  "desapercibidos": {
+    "translation": "unnoticed",
+    "pos": "adjective",
+    "context": "detalles que antes pasaban desapercibidos"
+  },
+  "diptongos": {
+    "translation": "diphthongs",
+    "pos": "noun",
+    "context": "tenía problemas con los diptongos"
+  },
+  "aislada": {
+    "translation": "isolated",
+    "pos": "adjective",
+    "context": "de forma aislada tenía un problema con todos los diptongos"
+  },
+  "exposición pasiva": {
+    "translation": "passive exposure",
+    "pos": "noun phrase",
+    "context": "la exposición pasiva al idioma es útil"
+  },
+  "vibrar": {
+    "translation": "to vibrate/trill",
+    "pos": "verb",
+    "context": "pueden hacer vibrar su r pero solamente de forma aislada"
+  },
+  "atrancarse": {
+    "translation": "to get stuck",
+    "pos": "verb",
+    "context": "no pueden decir estas palabras sin atrancarse"
+  },
+  "acostumbrada": {
+    "translation": "accustomed/used",
+    "pos": "adjective",
+    "context": "su boca no está acostumbrada a este movimiento"
+  },
+  "antinatural": {
+    "translation": "unnatural",
+    "pos": "adjective",
+    "context": "es algo antinatural para ellos"
+  },
+  "inofensiva": {
+    "translation": "harmless",
+    "pos": "adjective",
+    "context": "la r en sí sola es inofensiva"
+  },
+  "contexto fonético": {
+    "translation": "phonetic context",
+    "pos": "noun phrase",
+    "context": "en un contexto fonético concreto tiene que ajustarse"
+  },
+  "ajustarse": {
+    "translation": "to adjust/adapt",
+    "pos": "verb",
+    "context": "tiene que ajustarse de alguna forma"
+  },
+  "fluidez": {
+    "translation": "fluency",
+    "pos": "noun",
+    "context": "para conseguir esa fluidez ese dinamismo"
+  },
+  "dinamismo": {
+    "translation": "dynamism",
+    "pos": "noun",
+    "context": "para conseguir esa fluidez ese dinamismo"
+  },
+  "instrucción definida": {
+    "translation": "defined instruction",
+    "pos": "noun phrase",
+    "context": "tienes que recibir esa instrucción definida concreta"
+  },
+  "concreta": {
+    "translation": "concrete/specific",
+    "pos": "adjective",
+    "context": "tienes que recibir esa instrucción definida concreta"
+  },
+  "sentadilla": {
+    "translation": "squat",
+    "pos": "noun",
+    "context": "cuando haces sentadilla sí es verdad"
+  },
+  "suponga": {
+    "translation": "poses/presents (subjunctive)",
+    "pos": "verb",
+    "context": "un peso que suponga un reto para ti"
+  },
+  "reto": {
+    "translation": "challenge",
+    "pos": "noun",
+    "context": "un peso que suponga un reto para ti"
+  },
+  "lesionado": {
+    "translation": "injured",
+    "pos": "adjective",
+    "context": "en el peor de los casos puedes terminar lesionado"
+  },
+  "deja mucho que desear": {
+    "translation": "leaves much to be desired",
+    "pos": "expression",
+    "context": "la información deja mucho que desear"
+  },
+  "dispersos": {
+    "translation": "scattered/dispersed",
+    "pos": "adjective",
+    "context": "hay muchos recursos que están dispersos"
+  },
+  "dolores de cabeza": {
+    "translation": "headaches/troubles",
+    "pos": "noun phrase",
+    "context": "te vas a ahorrar muchos dolores de cabeza"
+  },
+  "fricción": {
+    "translation": "friction",
+    "pos": "noun",
+    "context": "ciertos tipos de fricción que hacen que no tengas fluidez"
+  },
+  "fisionomía": {
+    "translation": "physiognomy/facial features",
+    "pos": "noun",
+    "context": "su propia fisionomía sus propios desafíos al hablar"
+  },
+  "desafíos": {
+    "translation": "challenges",
+    "pos": "noun",
+    "context": "sus propios desafíos al hablar"
+  },
+  "evidentemente": {
+    "translation": "obviously/evidently",
+    "pos": "adverb",
+    "context": "evidentemente no los nativos no te van a interrumpir"
+  },
+  "bastante probable": {
+    "translation": "quite likely",
+    "pos": "expression",
+    "context": "es bastante probable que vayan a percibir algo raro"
+  },
+  "improbable": {
+    "translation": "unlikely/improbable",
+    "pos": "adjective",
+    "context": "es bastante improbable que puedas identificar todos"
+  },
+  "destreza": {
+    "translation": "skill/ability",
+    "pos": "noun",
+    "context": "la pronunciación es una destreza muy especial"
+  },
+  "coloquiales": {
+    "translation": "colloquial/informal",
+    "pos": "adjective",
+    "context": "aprender expresiones coloquiales"
+  },
+  "ajustes": {
+    "translation": "adjustments",
+    "pos": "noun",
+    "context": "requiere de ajustes específicos"
+  },
+  "práctica guiada": {
+    "translation": "guided practice",
+    "pos": "noun phrase",
+    "context": "una práctica guiada para conseguir una mejora real"
+  }
+}
