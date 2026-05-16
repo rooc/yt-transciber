@@ -32,11 +32,22 @@ export function updateStatsDisplay() {
 
 /**
  * Increment the learned videos count.
+ * @param {string} videoId - Video ID being marked as learned
  */
-export function incrementLearnedCount() {
+export function incrementLearnedCount(videoId) {
+	// Track which videos have been counted to avoid duplicates
+	const countedVideos = statsData.countedLearnedVideos || [];
+	if (videoId && countedVideos.includes(videoId)) {
+		// Already counted this video, don't increment again
+		return;
+	}
+	
+	const newCountedVideos = videoId ? [...countedVideos, videoId] : countedVideos;
+	
 	setStatsData({
 		...statsData,
-		totalLearned: (statsData.totalLearned || 0) + 1
+		totalLearned: (statsData.totalLearned || 0) + 1,
+		countedLearnedVideos: newCountedVideos
 	});
 	saveStats();
 	updateStatsDisplay();

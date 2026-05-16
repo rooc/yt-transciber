@@ -37,8 +37,10 @@ import { renderTranscriptLine } from './modules/transcript.js';
 /**
  * Load a video by its ID and all associated data.
  * @param {string} videoId - YouTube video ID
+ * @param {Object} options - Options including autoPlay
  */
-export async function loadByVideoId(videoId) {
+export async function loadByVideoId(videoId, options = {}) {
+	const { autoPlay = true } = options;
 	// Save progress for previous video and end watch session
 	if (currentVideoId && currentVideoId !== videoId) {
 		endWatchSession();
@@ -61,14 +63,16 @@ export async function loadByVideoId(videoId) {
 	if (activeTag) activeTag.classList.add("active");
 
 	// Load video and data
-	await loadVideoAndData(videoId);
+	await loadVideoAndData(videoId, options);
 }
 
 /**
  * Load video player and all associated data.
  * @param {string} videoId - YouTube video ID
+ * @param {Object} options - Options including autoPlay
  */
-async function loadVideoAndData(videoId) {
+async function loadVideoAndData(videoId, options = {}) {
+	const { autoPlay = true } = options;
 	const titleEl = document.getElementById("videoTitle");
 	const transcript = availableTranscripts.find((t) => t.videoId === videoId);
 	
@@ -104,6 +108,7 @@ async function loadVideoAndData(videoId) {
 	
 	loadVideo(videoId, {
 		savedProgress,
+		autoPlay,
 		onReady: () => {
 			startSync();
 		}

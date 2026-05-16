@@ -807,6 +807,15 @@ h3.collapsible-header:has(+ .collapsed) {
 	margin-top: 0.625rem;
 }
 
+/* Counter styles */
+#availableCount,
+#learnedCount {
+	font-size: 0.85em;
+	font-weight: normal;
+	color: var(--text-secondary);
+	margin-left: 0.25rem;
+}
+
 button.active {
 	background: var(--text-accent);
 }

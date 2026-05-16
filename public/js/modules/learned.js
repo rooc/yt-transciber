@@ -47,30 +47,17 @@ export function toggleLearned(videoId, loadByVideoId = null) {
 		// Note: Not decrementing stats - cumulative tracking only increases
 	} else {
 		learnedVideos.push(videoId);
-		incrementLearnedCount();
+		incrementLearnedCount(videoId);
 	}
 
 	// Reset progress for this video
 	resetVideoProgress(videoId);
 	setStatus(`Progress reset for video`);
 
-	// If marking current video as learned, clear the screen and auto-select first available
+	// If marking current video as learned, clear the screen
 	if (!wasLearned && videoId === state.currentVideoId) {
 		clearCurrentVideo();
-		
-		// Auto-select the first available transcript if there is one
-		if (loadFn) {
-			const remainingUnlearned = availableTranscripts.filter(t => 
-				t.videoId !== videoId && !learnedVideos.includes(t.videoId)
-			);
-			if (remainingUnlearned.length > 0) {
-				// Small delay to let the UI update first
-				setTimeout(() => {
-					loadFn(remainingUnlearned[0].videoId);
-					setStatus(`Auto-selected: ${remainingUnlearned[0].title || remainingUnlearned[0].videoId}`);
-				}, 100);
-			}
-		}
+		setStatus("Video marked as learned. Select another video to continue.");
 	}
 
 	saveLearnedAPI();
@@ -138,6 +125,7 @@ export function setupDragAndDrop() {
 	const availablePanel = document.getElementById('transcriptTags');
 	const learnedPanel = document.getElementById('learnedTags');
 
+
 	tags.forEach(tag => {
 		tag.addEventListener('dragstart', handleDragStart);
 		tag.addEventListener('dragend', handleDragEnd);
@@ -151,6 +139,15 @@ export function setupDragAndDrop() {
 			panel.addEventListener('drop', handleDrop);
 		}
 	});
+
+	// Also attach drag handlers to the entire learned panel (catches drops when content is collapsed)
+	const learnedPanelContainer = document.getElementById('learnedTranscripts');
+	if (learnedPanelContainer) {
+		learnedPanelContainer.addEventListener('dragover', handleDragOver);
+		learnedPanelContainer.addEventListener('dragenter', handleDragEnter);
+		learnedPanelContainer.addEventListener('dragleave', handleDragLeave);
+		learnedPanelContainer.addEventListener('drop', handleDrop);
+	}
 }
 
 /**
@@ -193,6 +190,11 @@ function handleDragOver(e) {
 function handleDragEnter(e) {
 	e.preventDefault();
 	this.classList.add('drag-over');
+
+	// Auto-expand learned panel if dragging into it while collapsed
+	if ((this.id === 'learnedTags' || this.id === 'learnedTranscripts') && isLearnedPanelCollapsed) {
+		toggleLearnedPanel();
+	}
 }
 
 /**
@@ -214,8 +216,8 @@ function handleDrop(e) {
 	const videoId = e.dataTransfer.getData('text/plain');
 	if (!videoId) return;
 
-	// Determine which panel we dropped on
-	const isLearnedPanel = this.id === 'learnedTags';
+	// Determine which panel we dropped on (either learnedTags div or learnedTranscripts container)
+	const isLearnedPanel = this.id === 'learnedTags' || this.id === 'learnedTranscripts';
 	const isCurrentlyLearned = learnedVideos.includes(videoId);
 
 	// Toggle learned status based on drop target
@@ -286,7 +288,7 @@ export function renderTranscriptLists(loadByVideoId) {
 				return `<span class="transcript-tag learned" id="tag-${t.videoId}" draggable="true" data-videoid="${t.videoId}" title="${fullTitle}">${shortTitle}<span class="material-icons icon-sm copy-id" data-videoid="${t.videoId}" title="Copy ID">content_copy</span></span>`;
 			})
 			.join("");
-		
+
 		// Add click handlers
 		learned.forEach(t => {
 			const tag = document.getElementById(`tag-${t.videoId}`);
@@ -294,7 +296,7 @@ export function renderTranscriptLists(loadByVideoId) {
 				tag.addEventListener('click', () => loadByVideoId(t.videoId));
 			}
 		});
-		
+
 		// Add copy icon click handlers
 		learned.forEach(t => {
 			const copyBtn = learnedContainer.querySelector(`#tag-${t.videoId} .copy-id`);
@@ -306,6 +308,12 @@ export function renderTranscriptLists(loadByVideoId) {
 			}
 		});
 	}
+
+	// Update counters
+	const availableCountEl = document.getElementById("availableCount");
+	const learnedCountEl = document.getElementById("learnedCount");
+	if (availableCountEl) availableCountEl.textContent = `(${unlearned.length})`;
+	if (learnedCountEl) learnedCountEl.textContent = `(${learned.length})`;
 
 	// Setup drag and drop
 	setupDragAndDrop();

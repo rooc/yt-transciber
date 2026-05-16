@@ -38,7 +38,7 @@ import { startWatchSession, endWatchSession } from './stats.js';
 export function loadVideo(videoId, options = {}) {
 	if (!videoId) return;
 
-	const { savedProgress, onReady } = options;
+	const { savedProgress, onReady, autoPlay = true } = options;
 	const loadingOverlay = document.getElementById("videoLoadingOverlay");
 
 	// Show loading overlay if we have saved progress
@@ -75,8 +75,19 @@ export function loadVideo(videoId, options = {}) {
 			};
 			
 			setTimeout(seekWhenReady, 300);
-		} else {
+		} else if (autoPlay) {
 			player.loadVideoById(videoId);
+			setTimeout(() => {
+				if (loadingOverlay) loadingOverlay.classList.add("hidden");
+			}, 300);
+		} else {
+			// Don't auto-play, just cue the video
+			player.cueVideoById(videoId);
+			// Update UI to show paused state
+			setIsPaused(true);
+			const icon = pauseBtn.querySelector(".material-icons");
+			if (icon) icon.textContent = "play_arrow";
+			pauseBtn.classList.add("active");
 			setTimeout(() => {
 				if (loadingOverlay) loadingOverlay.classList.add("hidden");
 			}, 300);
