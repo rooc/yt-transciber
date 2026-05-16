@@ -1,0 +1,262 @@
+{
+  "consumir": {
+    "translation": "to consume",
+    "pos": "verb",
+    "context": "cuando vosotros decidís qué tipo de vídeos, audios, podcast queréis consumir"
+  },
+  "input": {
+    "translation": "input (learning material)",
+    "pos": "noun",
+    "context": "a la hora de elegir el input que queremos consumir en español"
+  },
+  "asegurarnos": {
+    "translation": "to make sure",
+    "pos": "verb phrase",
+    "context": "lo que tenemos que hacer es asegurarnos que el contenido que consumimos"
+  },
+  "fiel a la realidad": {
+    "translation": "faithful to reality",
+    "pos": "expression",
+    "context": "sea lo más fiel a la realidad"
+  },
+  "en la medida de lo posible": {
+    "translation": "as much as possible",
+    "pos": "expression",
+    "context": "tenemos que asegurarnos en la medida de lo posible que ese contenido"
+  },
+  "panadería": {
+    "translation": "bakery",
+    "pos": "noun",
+    "context": "en los bares, en la calle, en los taxis, en las cafeterías, en la panadería"
+  },
+  "arquitectura del idioma": {
+    "translation": "architecture of the language",
+    "pos": "noun phrase",
+    "context": "respetando lo que yo llamo la arquitectura del idioma"
+  },
+  "encadenamos": {
+    "translation": "we chain/link",
+    "pos": "verb",
+    "context": "cómo encadenamos las palabras y cómo unimos las palabras"
+  },
+  "desacelerando": {
+    "translation": "slowing down",
+    "pos": "verb (gerund)",
+    "context": "parece que alguien está desacelerando el vídeo"
+  },
+  "jubilación": {
+    "translation": "retirement",
+    "pos": "noun",
+    "context": "si queréis pasar vuestra jubilación en un país hispanohablante"
+  },
+  "hispanohablante": {
+    "translation": "Spanish-speaking",
+    "pos": "adjective",
+    "context": "si queréis pasar vuestra jubilación en un país hispanohablante"
+  },
+  "reality": {
+    "translation": "reality show",
+    "pos": "noun",
+    "context": "terminaréis escuchando programas como Lavuelta o realities como La isla de las tentaciones"
+  },
+  "modificar": {
+    "translation": "to modify/change",
+    "pos": "verb",
+    "context": "la gente habla sin ningún tipo de modificación"
+  },
+  "modular": {
+    "translation": "to modulate",
+    "pos": "verb",
+    "context": "sin modular de ninguna forma"
+  },
+  "sobrearticular": {
+    "translation": "to over-articulate",
+    "pos": "verb",
+    "context": "sin sobrearticular"
+  },
+  "contraproducente": {
+    "translation": "counterproductive",
+    "pos": "adjective",
+    "context": "el contenido contraproducente para nuestro español a largo plazo"
+  },
+  "a largo plazo": {
+    "translation": "in the long term",
+    "pos": "expression",
+    "context": "el contenido contraproducente para nuestro español a largo plazo"
+  },
+  "enfatizar": {
+    "translation": "to emphasize",
+    "pos": "verb",
+    "context": "cuando queremos enfatizar algo"
+  },
+  "hilar": {
+    "translation": "to string together",
+    "pos": "verb",
+    "context": "podemos hilar perfectamente nuestros pensamientos"
+  },
+  "inexistente": {
+    "translation": "non-existent",
+    "pos": "adjective",
+    "context": "estás entrenando tu oído para un español inexistente"
+  },
+  "halófono aproximante": {
+    "translation": "approximant allophone",
+    "pos": "noun phrase",
+    "context": "esa pronunciación de esa B se realiza con el halófono aproximante"
+  },
+  "oclusiva": {
+    "translation": "occlusive/stop (consonant)",
+    "pos": "adjective",
+    "context": "decimos la botella con una B oclusiva"
+  },
+  "enrollarme": {
+    "translation": "to ramble on",
+    "pos": "verb phrase",
+    "context": "no quiero enrollarme mucho con esto"
+  },
+  "criterio": {
+    "translation": "criteria/judgment",
+    "pos": "noun",
+    "context": "criterio para decidir qué contenido te va a ayudar"
+  },
+  "infantilizar": {
+    "translation": "to infantilize/treat like a child",
+    "pos": "verb",
+    "context": "vamos a dejar de infantilizar a la gente"
+  },
+  "extraño": {
+    "translation": "strange/weird",
+    "pos": "adjective",
+    "context": "este tipo de contenido tan extraño"
+  },
+  "estrategica": {
+    "translation": "strategic",
+    "pos": "adjective",
+    "context": "es una pausa estratégica"
+  },
+  "bloques de significado": {
+    "translation": "blocks of meaning",
+    "pos": "noun phrase",
+    "context": "tiene sentido en términos de bloques de significado sintáctico y gramatical"
+  },
+  "hilo de pensamientos": {
+    "translation": "train of thought",
+    "pos": "noun phrase",
+    "context": "sigue una línea lógica de mi hilo de pensamientos"
+  },
+  "auxiliar": {
+    "translation": "auxiliary (verb)",
+    "pos": "noun/adjective",
+    "context": "no es una pausa mal puesta entre auxiliar y verbo principal"
+  },
+  "patrones respiratorios": {
+    "translation": "breathing patterns",
+    "pos": "noun phrase",
+    "context": "me guío un poco por mis patrones respiratorios"
+  },
+  "pulmones": {
+    "translation": "lungs",
+    "pos": "noun",
+    "context": "mis pulmones me lo están pidiendo"
+  },
+  "fundamental": {
+    "translation": "fundamental/essential",
+    "pos": "adjective",
+    "context": "que básicamente es fundamental a la hora de aprender español"
+  },
+  "procesar": {
+    "translation": "to process",
+    "pos": "verb",
+    "context": "vuestro cerebro procesa las frases palabra por palabra"
+  },
+  "ralentiza": {
+    "translation": "slows down",
+    "pos": "verb",
+    "context": "eso ralentiza la comprensión muchísimo"
+  },
+  "íntimas": {
+    "translation": "intimate",
+    "pos": "adjective",
+    "context": "en las conversaciones íntimas"
+  },
+  "contra natura": {
+    "translation": "against nature/unnatural",
+    "pos": "expression",
+    "context": "mi español no va contra natura"
+  },
+  "conciencia": {
+    "translation": "awareness/conscience",
+    "pos": "noun",
+    "context": "si estos creadores de contenido hablan así porque no tienen conciencia ninguna"
+  },
+  "contraintuitivo": {
+    "translation": "counterintuitive",
+    "pos": "adjective",
+    "context": "hay ideas que son contraintuitivas y esta es una de ellas"
+  },
+  "claridad": {
+    "translation": "clarity",
+    "pos": "noun",
+    "context": "hay personas que confunden la claridad con pausas artificiales"
+  },
+  "cuestionar": {
+    "translation": "to question",
+    "pos": "verb",
+    "context": "eso es lo que tenemos que cuestionarnos"
+  },
+  "comprobadísimo": {
+    "translation": "thoroughly tested/proven",
+    "pos": "adjective (superlative)",
+    "context": "esto no falla, lo tengo comprobadísimo"
+  },
+  "adaptar": {
+    "translation": "to adapt/adjust",
+    "pos": "verb",
+    "context": "no es lo mismo adaptar el input que distorsionar el input"
+  },
+  "distorsionar": {
+    "translation": "to distort",
+    "pos": "verb",
+    "context": "no es lo mismo adaptar el input que distorsionar el input"
+  },
+  "léxico": {
+    "translation": "vocabulary/lexicon",
+    "pos": "noun",
+    "context": "utilizar léxico más intuitivo"
+  },
+  "intuitivo": {
+    "translation": "intuitive",
+    "pos": "adjective",
+    "context": "utilizar léxico más intuitivo"
+  },
+  "insertar": {
+    "translation": "to insert",
+    "pos": "verb",
+    "context": "insertar pausas antinaturales"
+  },
+  "antinaturales": {
+    "translation": "unnatural",
+    "pos": "adjective",
+    "context": "insertar pausas antinaturales"
+  },
+  "fonética": {
+    "translation": "phonetics",
+    "pos": "noun",
+    "context": "por cómo funciona la fonética y la fonología españolas"
+  },
+  "fonología": {
+    "translation": "phonology",
+    "pos": "noun",
+    "context": "por cómo funciona la fonética y la fonología españolas"
+  },
+  "hiperarticulado": {
+    "translation": "hyper-articulated",
+    "pos": "adjective",
+    "context": "lo hiperarticulado es también secundario a lo hablado"
+  },
+  "ligeramente": {
+    "translation": "slightly",
+    "pos": "adverb",
+    "context": "contenido ligeramente más lento que respeta al ritmo natural"
+  }
+}

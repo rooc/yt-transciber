@@ -26,11 +26,17 @@ import {
 } from './api.js';
 import { updateStatsDisplay, incrementLearnedCount, decrementLearnedCount } from './stats.js';
 
+// Store reference to loadByVideoId for auto-selection after marking as learned
+let loadVideoCallback = null;
+
 /**
  * Toggle learned status for a video.
  * @param {string} videoId - Video ID to toggle
+ * @param {Function} loadByVideoId - Optional function to load a video by ID (for auto-selection)
  */
-export function toggleLearned(videoId) {
+export function toggleLearned(videoId, loadByVideoId = null) {
+	// Use provided callback or stored callback
+	const loadFn = loadByVideoId || loadVideoCallback;
 	if (!videoId) return;
 
 	const index = learnedVideos.indexOf(videoId);
@@ -48,23 +54,37 @@ export function toggleLearned(videoId) {
 	resetVideoProgress(videoId);
 	setStatus(`Progress reset for video`);
 
-	// If marking current video as learned, clear the screen
+	// If marking current video as learned, clear the screen and auto-select first available
 	if (!wasLearned && videoId === state.currentVideoId) {
 		clearCurrentVideo();
+		
+		// Auto-select the first available transcript if there is one
+		if (loadFn) {
+			const remainingUnlearned = availableTranscripts.filter(t => 
+				t.videoId !== videoId && !learnedVideos.includes(t.videoId)
+			);
+			if (remainingUnlearned.length > 0) {
+				// Small delay to let the UI update first
+				setTimeout(() => {
+					loadFn(remainingUnlearned[0].videoId);
+					setStatus(`Auto-selected: ${remainingUnlearned[0].title || remainingUnlearned[0].videoId}`);
+				}, 100);
+			}
+		}
 	}
 
 	saveLearnedAPI();
 	updateStatsDisplay();
-	renderTranscriptLists();
+	renderTranscriptLists(loadFn);
 }
 
 /**
  * Clear the current video from the screen.
  */
 function clearCurrentVideo() {
-	// Pause the player
+	// Stop and unload the player (not just pause)
 	if (player) {
-		player.pauseVideo();
+		player.stopVideo();
 	}
 	
 	// Clear the transcript display
@@ -214,6 +234,11 @@ function handleDrop(e) {
  * @param {Function} loadByVideoId - Function to load a video by ID
  */
 export function renderTranscriptLists(loadByVideoId) {
+	// Store the callback for use in toggleLearned
+	if (loadByVideoId) {
+		loadVideoCallback = loadByVideoId;
+	}
+	
 	const tagsContainer = document.getElementById("transcriptTags");
 	const learnedContainer = document.getElementById("learnedTags");
 

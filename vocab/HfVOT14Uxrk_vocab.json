@@ -1,0 +1,282 @@
+{
+  "navegador": {
+    "translation": "browser",
+    "pos": "noun",
+    "context": "Cada vez que escribes en el navegador algo como computeroy.com"
+  },
+  "conecta": {
+    "translation": "connects",
+    "pos": "verb",
+    "context": "tu navegador no se conecta directamente a ese nombre"
+  },
+  "direcciones IP": {
+    "translation": "IP addresses",
+    "pos": "noun phrase",
+    "context": "solo entiende números, direcciones IP como 142.250.180.110"
+  },
+  "entrar en juego": {
+    "translation": "to come into play",
+    "pos": "expression",
+    "context": "ahí es donde entra en juego un sistema"
+  },
+  "entendible": {
+    "translation": "understandable",
+    "pos": "adjective",
+    "context": "ese nombre entendible para nosotros"
+  },
+  "convertirse en": {
+    "translation": "to become / turn into",
+    "pos": "verb phrase",
+    "context": "se convierta en la IP real"
+  },
+  "ordenador": {
+    "translation": "computer",
+    "pos": "noun",
+    "context": "tu ordenador o tu móvil"
+  },
+  "cargarse": {
+    "translation": "to load",
+    "pos": "verb",
+    "context": "para que la página pueda cargarse"
+  },
+  "detrás de bambalinas": {
+    "translation": "behind the scenes",
+    "pos": "expression",
+    "context": "está trabajando detrás de bambalinas"
+  },
+  "traduciendo": {
+    "translation": "translating",
+    "pos": "verb",
+    "context": "traduciendo ese nombre bonito en una dirección de máquina"
+  },
+  "siglas": {
+    "translation": "acronyms / initials",
+    "pos": "noun",
+    "context": "DNS son las siglas de domain, name system"
+  },
+  "sistema de nombres de dominio": {
+    "translation": "domain name system",
+    "pos": "noun phrase",
+    "context": "sistema de nombres de dominio"
+  },
+  "instantáneo": {
+    "translation": "instantaneous",
+    "pos": "adjective",
+    "context": "el proceso de DNS parece casi instantáneo"
+  },
+  "encadenados": {
+    "translation": "chained / linked",
+    "pos": "adjective",
+    "context": "pasa por varios pasos encadenados"
+  },
+  "configurado": {
+    "translation": "configured",
+    "pos": "adjective",
+    "context": "el que tengas configurado en el router"
+  },
+  "operadora": {
+    "translation": "operator / carrier",
+    "pos": "noun",
+    "context": "Ese servidor que puede ser de la Operadora"
+  },
+  "jerarquía": {
+    "translation": "hierarchy",
+    "pos": "noun",
+    "context": "busca dentro de la jerarquía de DNS Global"
+  },
+  "nivel superior": {
+    "translation": "top-level",
+    "pos": "adjective",
+    "context": "servidores de dominio de nivel superior"
+  },
+  "controlan": {
+    "translation": "control",
+    "pos": "verb",
+    "context": "los servidores que controlan directamente ese dominio"
+  },
+  "concreto": {
+    "translation": "specific / concrete",
+    "pos": "adjective",
+    "context": "ese dominio concreto"
+  },
+  "devuelve": {
+    "translation": "returns",
+    "pos": "verb",
+    "context": "la devuelve a tu dispositivo"
+  },
+  "conectarse": {
+    "translation": "to connect",
+    "pos": "verb",
+    "context": "para conectarse al servidor de la web"
+  },
+  "descargar": {
+    "translation": "to download",
+    "pos": "verb",
+    "context": "empezar a descargar la página"
+  },
+  "temporalmente": {
+    "translation": "temporarily",
+    "pos": "adverb",
+    "context": "esa IP se guarda temporalmente en cache"
+  },
+  "cache": {
+    "translation": "cache",
+    "pos": "noun",
+    "context": "se guarda temporalmente en cache"
+  },
+  "repetir": {
+    "translation": "to repeat",
+    "pos": "verb",
+    "context": "no tenga que repetir todo el proceso"
+  },
+  "consulta": {
+    "translation": "query",
+    "pos": "noun",
+    "context": "la consulta de DNS tarde apenas unos milisegundos"
+  },
+  "milisegundos": {
+    "translation": "milliseconds",
+    "pos": "noun",
+    "context": "tarde apenas unos milisegundos"
+  },
+  "saturado": {
+    "translation": "saturated / overloaded",
+    "pos": "adjective",
+    "context": "si el servidor de DNS es lento, está saturado"
+  },
+  "configurado": {
+    "translation": "configured",
+    "pos": "adjective",
+    "context": "o mal configurado"
+  },
+  "alargar": {
+    "translation": "to extend / prolong",
+    "pos": "verb",
+    "context": "se puede alargar varios segundos"
+  },
+  "marcar la diferencia": {
+    "translation": "to make the difference",
+    "pos": "expression",
+    "context": "el cambio de DNS puede marcar la diferencia"
+  },
+  "acelera": {
+    "translation": "speeds up / accelerates",
+    "pos": "verb",
+    "context": "esa parte del proceso se acelera"
+  },
+  "fluida": {
+    "translation": "smooth / fluid",
+    "pos": "adjective",
+    "context": "la navegación se siente más fluida"
+  },
+  "ancho de banda": {
+    "translation": "bandwidth",
+    "pos": "noun phrase",
+    "context": "aunque el ancho de banda sea el mismo"
+  },
+  "por defecto": {
+    "translation": "by default",
+    "pos": "expression",
+    "context": "la DNS que pone la operadora por defecto"
+  },
+  "configurada": {
+    "translation": "configured",
+    "pos": "adjective",
+    "context": "simplemente viene ya configurada así"
+  },
+  "acuerdos": {
+    "translation": "agreements",
+    "pos": "noun",
+    "context": "algún proveedor con el que tenga acuerdos"
+  },
+  "optimizado": {
+    "translation": "optimized",
+    "pos": "adjective",
+    "context": "no está tan optimizado"
+  },
+  "traduce": {
+    "translation": "translates / results in",
+    "pos": "verb",
+    "context": "lo que se traduce en páginas que tardan más"
+  },
+  "filtrar": {
+    "translation": "to filter",
+    "pos": "verb",
+    "context": "usan la DNS para filtrar o bloquear contenido"
+  },
+  "bloquear": {
+    "translation": "to block",
+    "pos": "verb",
+    "context": "filtrar o bloquear contenido"
+  },
+  "control parental": {
+    "translation": "parental controls",
+    "pos": "noun phrase",
+    "context": "por control parental, por censura"
+  },
+  "censura": {
+    "translation": "censorship",
+    "pos": "noun",
+    "context": "por control parental, por censura"
+  },
+  "hábitos de navegación": {
+    "translation": "browsing habits",
+    "pos": "noun phrase",
+    "context": "analizar todos tus hábitos de navegación"
+  },
+  "recomienda": {
+    "translation": "recommended",
+    "pos": "verb",
+    "context": "se recomienda dejar de usar esas DNS por defecto"
+  },
+  "públicos": {
+    "translation": "public",
+    "pos": "adjective",
+    "context": "cambiar a servidores DNS públicos"
+  },
+  "mantenidos": {
+    "translation": "maintained",
+    "pos": "adjective",
+    "context": "rápidos y bien mantenidos"
+  },
+  "resolver": {
+    "translation": "to resolve",
+    "pos": "verb",
+    "context": "pensados para resolver millones de consultas"
+  },
+  "notablemente": {
+    "translation": "noticeably",
+    "pos": "adverb",
+    "context": "mejoran notablemente la sensación de velocidad"
+  },
+  "estabilidad": {
+    "translation": "stability",
+    "pos": "noun",
+    "context": "sensación de velocidad y estabilidad"
+  },
+  "matizar": {
+    "translation": "to clarify / qualify",
+    "pos": "verb",
+    "context": "De nuevo, matizar que el cambio de DNS no aumenta tu ancho de banda"
+  },
+  "aumenta": {
+    "translation": "increases",
+    "pos": "verb",
+    "context": "el cambio de DNS no aumenta tu ancho de banda"
+  },
+  "tiempo de arranque": {
+    "translation": "load time / startup time",
+    "pos": "noun phrase",
+    "context": "mejora el tiempo de arranque de la página"
+  },
+  "ajuste": {
+    "translation": "adjustment / tweak",
+    "pos": "noun",
+    "context": "puede ser justo el ajuste que faltaba"
+  },
+  "caja de comentarios": {
+    "translation": "comment box",
+    "pos": "noun phrase",
+    "context": "puedes dejarla en la caja de comentarios"
+  }
+}

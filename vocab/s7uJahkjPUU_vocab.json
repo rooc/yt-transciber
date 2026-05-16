@@ -1,0 +1,232 @@
+{
+  "idioma materno": {
+    "translation": "native language / mother tongue",
+    "pos": "noun phrase",
+    "context": "Y su idioma materno? Ah, ruso"
+  },
+  "conseguir": {
+    "translation": "to achieve / manage",
+    "pos": "verb",
+    "context": "No sé cómo lo consiguen"
+  },
+  "rusoparlantes": {
+    "translation": "Russian speakers",
+    "pos": "noun",
+    "context": "¿Por qué a los rusoparlantes... nos resulta aparentemente tan fácil aprender el español?"
+  },
+  "aparentemente": {
+    "translation": "apparently / seemingly",
+    "pos": "adverb",
+    "context": "nos resulta aparentemente tan fácil"
+  },
+  "mapa lingüístico": {
+    "translation": "linguistic map",
+    "pos": "noun phrase",
+    "context": "si miras un mapa lingüístico"
+  },
+  "jugar con ventaja": {
+    "translation": "to have an advantage",
+    "pos": "expression",
+    "context": "que juegan con ventaja por ser lenguas romances"
+  },
+  "lenguas romances": {
+    "translation": "Romance languages",
+    "pos": "noun phrase",
+    "context": "lenguas romances como el español"
+  },
+  "fluidez": {
+    "translation": "fluency",
+    "pos": "noun",
+    "context": "sin hablar con fluidez"
+  },
+  "fenómeno": {
+    "translation": "phenomenon",
+    "pos": "noun",
+    "context": "qué hay detrás de este fenómeno"
+  },
+  "esfuerzo sustancial": {
+    "translation": "substantial effort",
+    "pos": "noun phrase",
+    "context": "Idiomas que requieren esfuerzo sustancial"
+  },
+  "lenguas eslavas": {
+    "translation": "Slavic languages",
+    "pos": "noun phrase",
+    "context": "lenguas eslavas como la nuestra"
+  },
+  "asequible": {
+    "translation": "accessible / manageable",
+    "pos": "adjective",
+    "context": "Para un rusoparlante aprender búlgaro es... Asequible"
+  },
+  "angloparlantes": {
+    "translation": "English speakers",
+    "pos": "noun",
+    "context": "Un paralelo interesante para los angloparlantes"
+  },
+  "fonética": {
+    "translation": "phonetics",
+    "pos": "noun",
+    "context": "La primera razón es pura fonética"
+  },
+  "fonéticamente": {
+    "translation": "phonetically",
+    "pos": "adverb",
+    "context": "el ruso es un idioma fonéticamente muy denso"
+  },
+  "denso": {
+    "translation": "dense",
+    "pos": "adjective",
+    "context": "un idioma fonéticamente muy denso"
+  },
+  "distinción": {
+    "translation": "distinction / difference",
+    "pos": "noun",
+    "context": "esta distinción entre consonantes duras y blandas"
+  },
+  "palatalización": {
+    "translation": "palatalization",
+    "pos": "noun",
+    "context": "lo que llamamos palatalización"
+  },
+  "inventario fonético": {
+    "translation": "phonetic inventory",
+    "pos": "noun phrase",
+    "context": "Nuestro inventario fonético es enorme"
+  },
+  "reto": {
+    "translation": "challenge",
+    "pos": "noun",
+    "context": "pronunciar la erre vibrante española no es un reto"
+  },
+  "pasarse de frenada": {
+    "translation": "to overdo it / go too far",
+    "pos": "expression",
+    "context": "aunque a veces nos pasamos de frenada"
+  },
+  "variante": {
+    "translation": "variant",
+    "pos": "noun",
+    "context": "su variante hispanoamericana más suave"
+  },
+  "confusión": {
+    "translation": "confusion",
+    "pos": "noun",
+    "context": "Esos dos sonidos que tanta confusión generan"
+  },
+  "entrenada": {
+    "translation": "trained",
+    "pos": "adjective",
+    "context": "Llegamos con una boca ya entrenada para sonidos difíciles"
+  },
+  "descanso": {
+    "translation": "rest / break",
+    "pos": "noun",
+    "context": "El español, en ese sentido, es un descanso"
+  },
+  "flexivo": {
+    "translation": "fusional / inflectional",
+    "pos": "adjective",
+    "context": "El ruso es un idioma flexivo"
+  },
+  "casos gramaticales": {
+    "translation": "grammatical cases",
+    "pos": "noun phrase",
+    "context": "A esto lo llamamos casos gramaticales"
+  },
+  "pesadilla": {
+    "translation": "nightmare",
+    "pos": "noun",
+    "context": "es una pesadilla"
+  },
+  "riqueza morfológica": {
+    "translation": "morphological richness",
+    "pos": "noun phrase",
+    "context": "un idioma con una riqueza morfológica enorme"
+  },
+  "sintácticamente": {
+    "translation": "syntactically",
+    "pos": "adverb",
+    "context": "El español es sintácticamente bastante flexible"
+  },
+  "atrapados": {
+    "translation": "trapped",
+    "pos": "adjective",
+    "context": "Esa libertad hace que no nos sintamos atrapados"
+  },
+  "abusamos": {
+    "translation": "we abuse / overuse",
+    "pos": "verb",
+    "context": "a veces abusamos y sonamos como Yoda"
+  },
+  "obstáculo": {
+    "translation": "obstacle",
+    "pos": "noun",
+    "context": "el alfabeto latino tiene que ser un obstáculo enorme"
+  },
+  "excepciones": {
+    "translation": "exceptions",
+    "pos": "noun",
+    "context": "casi sin excepciones raras"
+  },
+  "alivio": {
+    "translation": "relief",
+    "pos": "noun",
+    "context": "Después del inglés es un alivio enorme"
+  },
+  "préstamos internacionales": {
+    "translation": "international loanwords",
+    "pos": "noun phrase",
+    "context": "Esos son los llamados préstamos internacionales"
+  },
+  "emigran": {
+    "translation": "emigrate / immigrate",
+    "pos": "verb",
+    "context": "Muchos rusohablantes que emigran a España"
+  },
+  "puramente": {
+    "translation": "purely",
+    "pos": "adverb",
+    "context": "no lo hacen por razones puramente económicas"
+  },
+  "sonoridad": {
+    "translation": "sonority / sound",
+    "pos": "noun",
+    "context": "esa sonoridad se nos engancha"
+  },
+  "engancha": {
+    "translation": "hooks / catches",
+    "pos": "verb",
+    "context": "esa sonoridad se nos engancha"
+  },
+  "resistencia": {
+    "translation": "resistance",
+    "pos": "noun",
+    "context": "con menos resistencia"
+  },
+  "necesidad real": {
+    "translation": "real need",
+    "pos": "noun phrase",
+    "context": "Esa necesidad real acelera todo"
+  },
+  "red de seguridad": {
+    "translation": "safety net",
+    "pos": "noun phrase",
+    "context": "No tenemos esa red de seguridad"
+  },
+  "suene duro": {
+    "translation": "sounds harsh",
+    "pos": "expression",
+    "context": "aunque suene duro, ayuda"
+  },
+  "ventajas": {
+    "translation": "advantages",
+    "pos": "noun",
+    "context": "comparten muchas de estas mismas ventajas"
+  },
+  "llevarse bien": {
+    "translation": "to get along well",
+    "pos": "expression",
+    "context": "La familia eslava en general parece llevarse bastante bien con el español"
+  }
+}

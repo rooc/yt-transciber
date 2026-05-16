@@ -1,0 +1,3 @@
+{
+  "summary": "Este vídeo explica qué es el DNS (Domain Name System) y su función fundamental en internet como sistema que traduce nombres de dominio legibles por humanos en direcciones IP numéricas que las computadoras entienden. Detalla el proceso de resolución DNS, donde servidores jerárquicos buscan la IP correspondiente, y menciona el uso de caché para acelerar consultas posteriores. También analiza los problemas de usar DNS por defecto de operadoras (lentitud, saturación, censura, análisis de navegación) y recomienda servidores públicos alternativos como Cloudflare, Google DNS, Quad 9 y Open DNS para mejorar velocidad, estabilidad y privacidad, aclarando que esto no aumenta el ancho de banda pero reduce el tiempo de carga inicial de páginas."
+}

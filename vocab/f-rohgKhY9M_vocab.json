@@ -1,0 +1,248 @@
+{
+  "negociar": {
+    "translation": "to negotiate",
+    "pos": "verb",
+    "context": "Para poder llegar a negociar o dar presentaciones ejecutivas"
+  },
+  "presentaciones ejecutivas": {
+    "translation": "executive presentations",
+    "pos": "noun phrase",
+    "context": "dar presentaciones ejecutivas en idiomas que aprendí ya de adulta"
+  },
+  "conseguir": {
+    "translation": "to achieve / obtain",
+    "pos": "verb",
+    "context": "sin esa base no lo habría conseguido"
+  },
+  "trucos": {
+    "translation": "tricks / tips",
+    "pos": "noun",
+    "context": "he descubierto una serie de trucos que se salen de lo común"
+  },
+  "salirse de lo común": {
+    "translation": "to go beyond the ordinary",
+    "pos": "expression",
+    "context": "trucos que se salen de lo común"
+  },
+  "placentero": {
+    "translation": "enjoyable / pleasant",
+    "pos": "adjective",
+    "context": "el proceso ha sido mucho más rápido y sobre todo placentero"
+  },
+  "manuales": {
+    "translation": "textbooks / manuals",
+    "pos": "noun",
+    "context": "cosas de las que no se habla en los manuales"
+  },
+  "fijarse en": {
+    "translation": "to pay attention to / notice",
+    "pos": "verb phrase",
+    "context": "Fijarte en los apellidos"
+  },
+  "apellidos": {
+    "translation": "last names / surnames",
+    "pos": "noun",
+    "context": "los apellidos de los jugadores significaban cosas cotidianas"
+  },
+  "cotidianas": {
+    "translation": "everyday / daily",
+    "pos": "adjective",
+    "context": "significaban cosas cotidianas"
+  },
+  "sustantivos": {
+    "translation": "nouns",
+    "pos": "noun",
+    "context": "estaba aprendiendo sustantivos y adjetivos básicos"
+  },
+  "tesoro": {
+    "translation": "treasure",
+    "pos": "noun",
+    "context": "también fue un tesoro"
+  },
+  "molinero": {
+    "translation": "miller",
+    "pos": "noun",
+    "context": "Thomas Müller, molinero"
+  },
+  "pastor de cerdos": {
+    "translation": "pig herder",
+    "pos": "noun phrase",
+    "context": "se traduce como algo tipo pastor de cerdos"
+  },
+  "cojo": {
+    "translation": "lame / cripple",
+    "pos": "adjective",
+    "context": "Philipp Lahm. Cojo"
+  },
+  "ironías": {
+    "translation": "ironies",
+    "pos": "noun",
+    "context": "con este tipo de ironías encima te lo pasas superb"
+  },
+  "absurdas": {
+    "translation": "absurd / ridiculous",
+    "pos": "adjective",
+    "context": "situaciones así de graciosas, irónicas, absurdas"
+  },
+  "grabarse a fuego": {
+    "translation": "to stick like a brand / burn into memory",
+    "pos": "expression",
+    "context": "hacen que la palabra se te grabe a fuego"
+  },
+  "panadero": {
+    "translation": "baker",
+    "pos": "noun",
+    "context": "Bog Beca, panadero"
+  },
+  "zapatero": {
+    "translation": "shoemaker",
+    "pos": "noun",
+    "context": "Mijail Schumacher, zapatero"
+  },
+  "herrero": {
+    "translation": "blacksmith",
+    "pos": "noun",
+    "context": "Will Smith, herrero"
+  },
+  "zorra": {
+    "translation": "fox (also vulgar: bitch)",
+    "pos": "noun",
+    "context": "Megan Fox, zorra"
+  },
+  "funcionar de cine": {
+    "translation": "to work like a charm / perfectly",
+    "pos": "expression",
+    "context": "puede ser polémico, pero funciona de cine"
+  },
+  "periódicos": {
+    "translation": "newspapers",
+    "pos": "noun",
+    "context": "busca artículos en periódicos de Francia"
+  },
+  "barbaridad": {
+    "translation": "outrageous thing / nonsense",
+    "pos": "noun",
+    "context": "Si el artículo dice una barbaridad"
+  },
+  "indignarse": {
+    "translation": "to get outraged / indignant",
+    "pos": "verb",
+    "context": "Aunque sea para indignarte un poquito"
+  },
+  "emocionalmente involucrado": {
+    "translation": "emotionally involved",
+    "pos": "expression",
+    "context": "estás emocionalmente involucrado"
+  },
+  "adrenalina": {
+    "translation": "adrenaline",
+    "pos": "noun",
+    "context": "Esa adrenalina o ese orgullo"
+  },
+  "pegarse": {
+    "translation": "to stick (vocabulary)",
+    "pos": "verb",
+    "context": "el vocabulario se te pegue"
+  },
+  "subestimar": {
+    "translation": "to underestimate",
+    "pos": "verb",
+    "context": "Otra manera de aprender que subestimamos un montón"
+  },
+  "vicio": {
+    "translation": "addiction / vice",
+    "pos": "noun",
+    "context": "pueden ser un vicio y hay que ponerse límites"
+  },
+  "ponerse límites": {
+    "translation": "to set limits",
+    "pos": "expression",
+    "context": "hay que ponerse límites"
+  },
+  "inmersión": {
+    "translation": "immersion",
+    "pos": "noun",
+    "context": "son herramientas de inmersión brutales"
+  },
+  "rendimientos": {
+    "translation": "returns / yields",
+    "pos": "noun",
+    "context": "Yields, rendimientos"
+  },
+  "comodidades": {
+    "translation": "comforts / amenities",
+    "pos": "noun",
+    "context": "Amenities, servicios, comodidades"
+  },
+  "salitre": {
+    "translation": "saltpeter",
+    "pos": "noun",
+    "context": "Niter, salitre"
+  },
+  "saquear": {
+    "translation": "to plunder / pillage",
+    "pos": "verb",
+    "context": "Pillage, saquear"
+  },
+  "ganadería": {
+    "translation": "livestock farming / animal husbandry",
+    "pos": "noun",
+    "context": "Husbandry, ganadería"
+  },
+  "contraseñas": {
+    "translation": "passwords",
+    "pos": "noun",
+    "context": "Crea tus contraseñas y nombres de usuario"
+  },
+  "simplísimo": {
+    "translation": "extremely simple",
+    "pos": "adjective",
+    "level": "B1",
+    "source": "superlative"
+  },
+  "repetición espaciada": {
+    "translation": "spaced repetition",
+    "pos": "noun phrase",
+    "context": "Es repetición espaciada, forzosa y, sobre todo, muy útil"
+  },
+  "sobredosis lingüística": {
+    "translation": "linguistic overdose",
+    "pos": "noun phrase",
+    "context": "evitar la sobredosis lingüística"
+  },
+  "partidaria de": {
+    "translation": "in favor of / supporter of",
+    "pos": "expression",
+    "context": "Soy partidaria de crearse hábitos pequeños"
+  },
+  "atracón": {
+    "translation": "binge / stuffing oneself",
+    "pos": "noun",
+    "context": "pegarle un atracón un día"
+  },
+  "gatillo": {
+    "translation": "trigger",
+    "pos": "noun",
+    "context": "un hábito gatillo, algo que ya hagas"
+  },
+  "prohíbes": {
+    "translation": "you forbid",
+    "pos": "verb",
+    "context": "te prohíbes pensar en tu idioma materno"
+  },
+  "narrar": {
+    "translation": "to narrate",
+    "pos": "verb",
+    "context": "Oblígate a narrar lo que haces o piensas"
+  },
+  "conmutación mental": {
+    "translation": "mental switching",
+    "pos": "noun phrase",
+    "context": "Es un ejercicio de conmutación mental brutal"
+  },
+  "dominar": {
+    "translation": "to master",
+    "pos": "verb",
+    "context": "me ayudaron a dominar el inglés, el español y el alemán"
+  }
+}
